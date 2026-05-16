@@ -38,7 +38,7 @@ jobs:
 
       - name: 使用虚拟窗口运行百度检索脚本
         run: |
-          xvfb-run -a -s "-screen 0 1366x900x24" python crawler_baidu_optimized.py \
+          xvfb-run -a -s "-screen 0 1366x900x24" python crawler.py \
             --overwrite \
             --no-file-log \
             --no-detail-logs \
