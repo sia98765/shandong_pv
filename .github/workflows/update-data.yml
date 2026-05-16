@@ -36,19 +36,20 @@ jobs:
           which google-chrome || true
           google-chrome --version || true
 
-      - name: 使用虚拟窗口运行百度检索脚本
+      - name: 运行百度检索爬虫
         run: |
           xvfb-run -a -s "-screen 0 1366x900x24" python crawler.py \
-            --overwrite \
             --no-file-log \
             --no-detail-logs \
-            --limit-queries 0 \
+            --limit-queries 3 \
             --max-pages-per-query 1 \
-            --query-sleep-min 20 \
-            --query-sleep-max 35 \
-            --page-sleep-min 3 \
-            --page-sleep-max 8 \
-            --after-load-sleep 3
+            --query-sleep-min 60 \
+            --query-sleep-max 120 \
+            --page-sleep-min 8 \
+            --page-sleep-max 15 \
+            --after-load-sleep 5 \
+            --restart-browser-every 1 \
+            --restart-sleep 120
 
       - name: 提交采集结果
         run: |
