@@ -1,10 +1,45 @@
 {
-  "generated_at": "2026-05-16T12:58:30+00:00",
+  "generated_at": "2026-05-16T14:20:23+00:00",
   "total": 0,
+  "date_rule": {
+    "mode": "publish_date_only",
+    "years": 2,
+    "cutoff_date": "2024-05-15",
+    "allow_undated_default": false
+  },
+  "query_scope": {
+    "mode": "baidu_fixed_site_keyword_plus_global_shandong",
+    "site_keywords": [
+      "光伏政策",
+      "光伏市场分析",
+      "光伏项目"
+    ],
+    "global_queries": [
+      "光伏项目 山东省",
+      "光伏市场分析 山东省",
+      "光伏政策 山东省"
+    ],
+    "query_example": "site:sdb.nea.gov.cn 光伏政策",
+    "websites": {
+      "山东能源监管办": "https://sdb.nea.gov.cn",
+      "山东省能源局": "http://nyj.shandong.gov.cn",
+      "国家能源局": "https://www.nea.gov.cn",
+      "国家电网": "https://www.sgcc.com.cn",
+      "中国招标投标公共服务平台": "https://www.cebpubservice.com",
+      "山东政府采购网": "http://www.ccgp-shandong.gov.cn",
+      "中能建电子采购平台": "https://ec.ceec.net.cn",
+      "中国电建集采平台": "https://ec.powerchina.cn",
+      "济南公共资源交易中心": "http://jnggzy.jinan.gov.cn",
+      "青岛公共资源交易中心": "https://ggzy.qingdao.gov.cn",
+      "北极星太阳能光伏网": "https://guangfu.bjx.com.cn"
+    },
+    "query_count": 36,
+    "provider": "baidu",
+    "path_positive_rules_removed": true
+  },
   "category_stats": {
     "policy": 0,
     "market": 0,
     "project": 0
-  },
-  "note": "首次运行 GitHub Actions 后会自动生成真实数据。"
+  }
 }
