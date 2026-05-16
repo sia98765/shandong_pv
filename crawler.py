@@ -744,7 +744,10 @@ def build_drission_page(args: argparse.Namespace) -> ChromiumPage:
                        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 
     # 独立用户目录，保留少量 Cookie，比每次全新环境更稳定。
-    user_data_dir = PROJECT_ROOT / ".chrome_user_data_baidu"
+    user_data_dir = Path(os.environ.get(
+        "BAIDU_PROFILE_DIR",
+        r"D:\actions-runner\chrome_profiles\baidu"
+    ))
     if args.fresh_profile and user_data_dir.exists():
         shutil.rmtree(user_data_dir, ignore_errors=True)
     set_user_data_path(co, user_data_dir)

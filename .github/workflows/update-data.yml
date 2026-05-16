@@ -1,8 +1,9 @@
-name: 山东光伏情报站 - 本机自动采集
+name: 山东光伏情报站 - 本机百度低频采集
 
 on:
   workflow_dispatch:
   schedule:
+    # 每天北京时间 09:00 运行一次；GitHub cron 使用 UTC 时间
     - cron: "0 1 * * *"
 
 permissions:
@@ -10,17 +11,35 @@ permissions:
 
 jobs:
   crawler:
-    runs-on: [ self-hosted, Windows, X64 ]
+    runs-on: [self-hosted, Windows, X64]
+
+    env:
+      # 预留给脚本使用：建议你后续把脚本浏览器目录改成读取这个环境变量
+      BAIDU_PROFILE_DIR: D:\actions-runner\chrome_profiles\baidu
+      PYTHONIOENCODING: utf-8
 
     steps:
       - name: 拉取仓库代码
         uses: actions/checkout@v4
 
-      - name: 检查 Python
+      - name: 检查运行环境
         shell: cmd
         run: |
+          echo RUNNER_NAME=%RUNNER_NAME%
+          echo RUNNER_OS=%RUNNER_OS%
+          echo COMPUTERNAME=%COMPUTERNAME%
+          echo BAIDU_PROFILE_DIR=%BAIDU_PROFILE_DIR%
           python --version
           pip --version
+
+      - name: 创建必要目录
+        shell: cmd
+        run: |
+          if not exist data mkdir data
+          if not exist logs mkdir logs
+          if not exist logs\blocked_pages mkdir logs\blocked_pages
+          if not exist D:\actions-runner\chrome_profiles mkdir D:\actions-runner\chrome_profiles
+          if not exist D:\actions-runner\chrome_profiles\baidu mkdir D:\actions-runner\chrome_profiles\baidu
 
       - name: 安装 Python 依赖
         shell: cmd
@@ -28,7 +47,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: 运行百度检索爬虫
+      - name: 运行百度低频采集脚本
         shell: cmd
         run: |
           python crawler.py ^
@@ -36,18 +55,19 @@ jobs:
             --no-detail-logs ^
             --limit-queries 3 ^
             --max-pages-per-query 1 ^
-            --query-sleep-min 30 ^
-            --query-sleep-max 60 ^
-            --page-sleep-min 5 ^
-            --page-sleep-max 10 ^
-            --restart-browser-every 3 ^
-            --restart-sleep 60
+            --query-sleep-min 90 ^
+            --query-sleep-max 180 ^
+            --page-sleep-min 10 ^
+            --page-sleep-max 20 ^
+            --after-load-sleep 5 ^
+            --restart-browser-every 1 ^
+            --restart-sleep 120
 
       - name: 提交采集结果
         shell: cmd
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/shandong_pv_data.json data/meta.json
+          git add data/shandong_pv_data.json data/meta.json logs/blocked_pages
           git commit -m "update shandong pv data" || echo 没有数据变化
           git push
