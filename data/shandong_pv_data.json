@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-05-16T12:58:30+00:00",
+  "total": 0,
+  "date_rule": {
+    "mode": "publish_date_only",
+    "years": 2,
+    "cutoff_date": "",
+    "allow_undated_default": false
+  },
+  "query_scope": {
+    "mode": "baidu_fixed_site_keyword_plus_global_shandong",
+    "note": "首次运行 GitHub Actions 后会自动生成真实数据。"
+  },
+  "category_stats": {
+    "policy": 0,
+    "market": 0,
+    "project": 0
+  },
+  "items": []
+}

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>山东光伏情报站 | 政策·市场·项目</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #1f8f4d;
+      --primary-dark: #145f35;
+      --primary-light: #e8f7ef;
+      --bg-page: #f5f7fb;
+      --bg-card: #ffffff;
+      --border: #e2e8f0;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --market: #0284c7;
+      --policy: #d97706;
+      --project: #7c3aed;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+    .header {
+      background: radial-gradient(circle at 20% 20%, rgba(255,255,255,.18), transparent 25%), linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #fff;
+      padding: 34px 18px 28px;
+      text-align: center;
+    }
+    .header h1 { font-size: 32px; letter-spacing: .5px; margin-bottom: 8px; }
+    .subtitle { opacity: .92; font-size: 14px; }
+    .stats-bar {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      font-size: 13px;
+    }
+    .container { max-width: 1600px; margin: 0 auto; padding: 24px 18px 36px; }
+    .filter-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, .04);
+      margin-bottom: 18px;
+    }
+    .filter-tabs { display: flex; gap: 10px; flex-wrap: wrap; }
+    .filter-btn {
+      border: 0;
+      background: #f1f5f9;
+      color: var(--text-secondary);
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .18s ease;
+    }
+    .filter-btn.active, .filter-btn:hover { background: var(--primary); color: #fff; }
+    .search-box { display: flex; gap: 8px; flex-wrap: wrap; }
+    .search-box input {
+      width: 280px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 14px;
+      outline: none;
+      font-size: 14px;
+    }
+    .search-box input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(31, 143, 77, .12); }
+    .search-box button, .small-btn {
+      border: 0;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      margin: 12px 2px 18px;
+      flex-wrap: wrap;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 18px;
+    }
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--primary);
+      border-radius: 16px;
+      padding: 18px;
+      min-height: 252px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, .04);
+      transition: transform .18s ease, box-shadow .18s ease;
+      cursor: pointer;
+    }
+    .info-card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(15, 23, 42, .08); }
+    .info-card.market { border-left-color: var(--market); }
+    .info-card.policy { border-left-color: var(--policy); }
+    .info-card.project { border-left-color: var(--project); }
+    .card-category {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .card-category.market { background: #e0f2fe; color: var(--market); }
+    .card-category.policy { background: #fff7ed; color: var(--policy); }
+    .card-category.project { background: #f3e8ff; color: var(--project); }
+    .card-title { font-size: 17px; line-height: 1.45; font-weight: 800; margin-bottom: 10px; color: var(--text-primary); }
+    .card-content {
+      font-size: 14px;
+      color: var(--text-secondary);
+      flex: 1;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      margin-bottom: 12px;
+    }
+    .card-meta {
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+    /* 卡片底部快速跳转链接 */
+    .card-read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 2px 0;
+      transition: opacity .15s;
+    }
+    .card-read-link:hover { opacity: .72; }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 26px;
+      flex-wrap: wrap;
+    }
+    .page-btn {
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      font-weight: 700;
+    }
+    .page-btn.active, .page-btn:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .loading, .empty-state {
+      text-align: center;
+      padding: 60px 16px;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      border: 1px dashed var(--border);
+      border-radius: 16px;
+    }
+    .spinner {
+      width: 42px; height: 42px;
+      border: 3px solid #e2e8f0;
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin .8s linear infinite;
+      margin: 0 auto 14px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .footer {
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 24px 18px 36px;
+      color: var(--text-muted);
+      font-size: 12px;
+      text-align: center;
+    }
+    /* 弹框 */
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 23, 42, .58);
+      backdrop-filter: blur(3px);
+      z-index: 1000;
+      padding: 18px;
+    }
+    .modal.active { display: flex; }
+    .modal-content {
+      width: min(860px, 100%);
+      max-height: 86vh;
+      overflow-y: auto;
+      background: #fff;
+      border-radius: 22px;
+      padding: 26px;
+      position: relative;
+      box-shadow: 0 22px 70px rgba(15, 23, 42, .28);
+    }
+    .modal-close {
+      position: absolute;
+      right: 18px;
+      top: 12px;
+      font-size: 32px;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+    }
+    .modal h3 { padding-right: 40px; font-size: 20px; line-height: 1.5; }
+    .modal-body { margin-top: 16px; color: var(--text-secondary); }
+    .modal-body p { margin: 10px 0; }
+    .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+    /* 主操作按钮：阅读原文 */
+    .link-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: background .18s;
+    }
+    .link-btn-primary:hover { background: var(--primary-dark); }
+    /* 次要按钮：百度搜索 / 官网主页 */
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background .18s;
+    }
+    .link-btn:hover { background: #c8edda; }
+    @media (max-width: 768px) {
+      .header h1 { font-size: 24px; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .search-box, .search-box input, .search-box button { width: 100%; }
+      .filter-bar { align-items: stretch; }
+      .card-meta { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>☀️ 山东光伏情报站</h1>
+    <div class="subtitle">光伏政策 · 市场分析 · 项目信息｜每日自动更新｜多来源聚合</div>
+    <div class="stats-bar" id="statsBar"><span>📋 数据加载中...</span></div>
+  </header>
+
+  <main class="container">
+    <section class="filter-bar">
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" data-category="all">全部</button>
+        <button class="filter-btn" data-category="policy">光伏政策</button>
+        <button class="filter-btn" data-category="market">市场分析</button>
+        <button class="filter-btn" data-category="project">项目信息</button>
+      </div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="搜索标题、来源、摘要..." />
+        <button id="searchBtn">搜索</button>
+      </div>
+    </section>
+
+    <div class="summary-row">
+      <div id="resultCount">共 0 条记录</div>
+      <div id="lastUpdateTime">数据最后同步：--</div>
+    </div>
+
+    <section id="contentArea">
+      <div class="loading"><div class="spinner"></div><p>正在加载数据...</p></div>
+    </section>
+    <nav id="paginationArea" class="pagination"></nav>
+  </main>
+
+  <footer class="footer">
+    <p>数据入口：百度搜索 + 指定官网 site 检索；点击卡片或「阅读原文」可直接访问原始页面。</p>
+    <p>重点来源：山东能源监管办、山东省能源局、国家能源局、国家电网、中国招标投标公共服务平台、山东政府采购网、中能建电子采购平台、中国电建集采平台、济南/青岛公共资源交易中心、北极星太阳能光伏网等。</p>
+  </footer>
+
+  <!-- 详情弹框 -->
+  <div id="detailModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal()">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+<script>
+  const DATA_URL = './data/shandong_pv_data.json';
+  const PAGE_SIZE = 24;
+  const CATEGORY_TEXT = { policy: '光伏政策', market: '市场分析', project: '项目信息' };
+  let allData = [];
+  let meta = { generated_at: '', total: 0, category_stats: {} };
+  let currentCategory = 'all';
+  let currentSearch = '';
+  let currentPage = 1;
+
+  async function loadData() {
+    try {
+      const res = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const json = await res.json();
+      if (Array.isArray(json)) {
+        allData = json;
+        meta = { total: json.length, generated_at: '' };
+      } else {
+        allData = Array.isArray(json.items) ? json.items : [];
+        meta = json;
+      }
+    } catch (err) {
+      allData = [];
+      meta = { generated_at: '', total: 0, category_stats: {} };
+      console.error('数据加载失败：', err);
+    }
+    allData.sort((a, b) => (b.publish_date || '').localeCompare(a.publish_date || ''));
+    updateStats();
+    render();
+  }
+
+  function updateStats() {
+    const stats = meta.category_stats || {};
+    document.getElementById('statsBar').innerHTML = [
+      `<span>📋 总量：${allData.length} 条</span>`,
+      `<span>📘 政策：${stats.policy || allData.filter(x => x.category === 'policy').length}</span>`,
+      `<span>📈 市场：${stats.market || allData.filter(x => x.category === 'market').length}</span>`,
+      `<span>📦 项目：${stats.project || allData.filter(x => x.category === 'project').length}</span>`
+    ].join('');
+
+    const d = meta.generated_at ? new Date(meta.generated_at) : null;
+    document.getElementById('lastUpdateTime').innerText =
+      '数据最后同步：' + (d && !isNaN(d.getTime()) ? d.toLocaleString() : '等待首次爬虫生成');
+  }
+
+  function escapeHtml(str) {
+    return String(str || '').replace(/[&<>'"]/g, s => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
+    }[s]));
+  }
+
+  function filteredData() {
+    let data = currentCategory === 'all' ? allData : allData.filter(x => x.category === currentCategory);
+    const kw = currentSearch.trim().toLowerCase();
+    if (kw) {
+      data = data.filter(x =>
+        [x.title, x.content, x.source, x.category_label].some(v => String(v || '').toLowerCase().includes(kw))
+      );
+    }
+    return data;
+  }
+
+  function render() {
+    const data = filteredData();
+    const total = data.length;
+    const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+    if (currentPage > totalPages) currentPage = totalPages;
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const pageData = data.slice(start, start + PAGE_SIZE);
+    document.getElementById('resultCount').innerText =
+      `共 ${total} 条记录，第 ${currentPage}/${totalPages} 页，每页 24 条`;
+
+    const content = document.getElementById('contentArea');
+    if (!pageData.length) {
+      content.innerHTML = `<div class="empty-state"><h3>暂无数据</h3><p>请先在本地或 GitHub Actions 中运行爬虫：<br><code>python crawler.py --overwrite --debug --limit-queries 3</code></p></div>`;
+      document.getElementById('paginationArea').innerHTML = '';
+      return;
+    }
+
+    content.innerHTML = `<div class="cards-grid">${pageData.map(item => cardHtml(item)).join('')}</div>`;
+
+    // 卡片主体点击 → 弹出详情
+    document.querySelectorAll('.info-card').forEach(card => {
+      card.addEventListener('click', e => {
+        // 如果点击的是卡片内的链接，不触发弹框
+        if (e.target.closest('a')) return;
+        const id = card.getAttribute('data-id');
+        const item = allData.find(x => x.id === id);
+        if (item) showDetail(item);
+      });
+    });
+
+    renderPagination(totalPages);
+  }
+
+  function cardHtml(item) {
+    const category = item.category || 'market';
+    const label = item.category_label || CATEGORY_TEXT[category] || category;
+    const origUrl = item.original_url || '';
+    // 卡片底部阅读原文链接（有链接才显示）
+    const readLink = origUrl
+      ? `<a class="card-read-link" href="${escapeHtml(origUrl)}" target="_blank" rel="noopener noreferrer" title="直接访问原文页面">🔗 阅读原文</a>`
+      : '';
+    return `
+      <article class="info-card ${escapeHtml(category)}" data-id="${escapeHtml(item.id)}">
+        <div class="card-category ${escapeHtml(category)}">${escapeHtml(label)}</div>
+        <div class="card-title">${escapeHtml(item.title)}</div>
+        <div class="card-content">${escapeHtml(item.content || '暂无摘要')}</div>
+        <div class="card-meta">
+          <span>📅 ${escapeHtml(item.publish_date || '未知日期')}</span>
+          <span>📌 ${escapeHtml(item.source || '未知来源')}</span>
+          ${readLink}
+        </div>
+      </article>`;
+  }
+
+  function renderPagination(totalPages) {
+    const box = document.getElementById('paginationArea');
+    if (totalPages <= 1) { box.innerHTML = ''; return; }
+    const pages = [];
+    pages.push({ text: '上一页', page: Math.max(1, currentPage - 1), disabled: currentPage === 1 });
+    const start = Math.max(1, currentPage - 3);
+    const end = Math.min(totalPages, start + 6);
+    for (let i = start; i <= end; i++) pages.push({ text: String(i), page: i, active: i === currentPage });
+    pages.push({ text: '下一页', page: Math.min(totalPages, currentPage + 1), disabled: currentPage === totalPages });
+    box.innerHTML = pages.map(p =>
+      `<button class="page-btn ${p.active ? 'active' : ''}" ${p.disabled ? 'disabled' : ''} data-page="${p.page}">${p.text}</button>`
+    ).join('');
+    box.querySelectorAll('.page-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.disabled) return;
+        currentPage = Number(btn.getAttribute('data-page'));
+        render();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  }
+
+  function showDetail(item) {
+    document.getElementById('modalTitle').innerText = item.title || '';
+
+    const origUrl  = item.original_url   || '';
+    const baidu    = item.baidu_search_url || ('https://www.baidu.com/s?wd=' + encodeURIComponent(item.title || ''));
+    const home     = item.homepage_url   || ('https://www.baidu.com/s?wd=' + encodeURIComponent(item.source || ''));
+
+    // 主按钮：阅读原文（仅在有链接时显示）
+    const primaryBtn = origUrl
+      ? `<a class="link-btn-primary" href="${escapeHtml(origUrl)}" target="_blank" rel="noopener noreferrer">📄 阅读原文</a>`
+      : '';
+
+    document.getElementById('modalBody').innerHTML = `
+      <p><strong>分类：</strong>${escapeHtml(item.category_label || CATEGORY_TEXT[item.category] || '')}</p>
+      <p><strong>发布日期：</strong>${escapeHtml(item.publish_date || '未知日期')}</p>
+      <p><strong>来源：</strong>${escapeHtml(item.source || '未知来源')}</p>
+      <p><strong>内容概述：</strong><br>${escapeHtml(item.content || '暂无摘要')}</p>
+      <div class="btn-group">
+        ${primaryBtn}
+        <a class="link-btn" href="${escapeHtml(baidu)}" target="_blank" rel="noopener noreferrer">🔍 百度搜索标题</a>
+        <a class="link-btn" href="${escapeHtml(home)}" target="_blank" rel="noopener noreferrer">🏠 访问官网主页</a>
+      </div>`;
+
+    document.getElementById('detailModal').classList.add('active');
+  }
+
+  function closeModal() {
+    document.getElementById('detailModal').classList.remove('active');
+  }
+
+  function bindEvents() {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(x => x.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.getAttribute('data-category');
+        currentPage = 1;
+        render();
+      });
+    });
+    document.getElementById('searchBtn').addEventListener('click', () => {
+      currentSearch = document.getElementById('searchInput').value;
+      currentPage = 1;
+      render();
+    });
+    document.getElementById('searchInput').addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        currentSearch = e.target.value;
+        currentPage = 1;
+        render();
+      }
+    });
+    // 点击遮罩关闭弹框
+    window.addEventListener('click', e => {
+      if (e.target === document.getElementById('detailModal')) closeModal();
+    });
+    // ESC 键关闭弹框
+    window.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeModal();
+    });
+  }
+
+  bindEvents();
+  loadData();
+</script>
+</body>
+</html>

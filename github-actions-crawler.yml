@@ -1,0 +1,75 @@
+name: 山东光伏情报站 - 百度检索自动更新
+
+on:
+  # 手动运行：进入 Actions 页面点击 Run workflow
+  workflow_dispatch:
+
+  # 定时运行：这里是 UTC 时间。0 1 * * * = 北京时间每天 09:00
+  schedule:
+    - cron: "0 1 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  crawler:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+
+    steps:
+      - name: 1. 拉取仓库代码
+        uses: actions/checkout@v4
+
+      - name: 2. 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: 3. 安装 Linux 虚拟窗口 Xvfb
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+
+      - name: 4. 安装 Python 依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 5. 检查 Chrome 浏览器
+        run: |
+          which google-chrome || true
+          google-chrome --version || true
+
+      - name: 6. 使用虚拟窗口运行百度检索脚本
+        run: |
+          xvfb-run -a -s "-screen 0 1366x900x24" python crawler.py \
+            --overwrite \
+            --no-file-log \
+            --no-detail-logs \
+            --limit-queries 0 \
+            --max-pages-per-query 1 \
+            --query-sleep-min 20 \
+            --query-sleep-max 35 \
+            --page-sleep-min 3 \
+            --page-sleep-max 8 \
+            --after-load-sleep 3 \
+            --restart-browser-every 3 \
+            --restart-sleep 60
+
+      - name: 7. 如果触发百度验证，上传调试页面和截图
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: baidu-blocked-pages
+          path: logs/blocked_pages/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: 8. 提交更新后的数据
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/shandong_pv_data.json data/meta.json
+          git commit -m "update shandong pv data" || echo "没有数据变化，无需提交"
+          git push
