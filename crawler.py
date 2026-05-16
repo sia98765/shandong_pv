@@ -58,6 +58,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Set, Tuple
 from urllib.parse import parse_qs, quote_plus, unquote, urlparse, urlunparse
 
+from DrissionPage._units.scroller import Scroller
 from bs4 import BeautifulSoup
 
 try:
@@ -751,6 +752,8 @@ def build_drission_page(args: argparse.Namespace) -> ChromiumPage:
     if args.fresh_profile and user_data_dir.exists():
         shutil.rmtree(user_data_dir, ignore_errors=True)
     set_user_data_path(co, user_data_dir)
+    new_func_name = "YunXi"
+    Scroller.YunXi = new_func_name
 
     try:
         page = ChromiumPage(addr_or_opts=co)
@@ -762,7 +765,7 @@ def build_drission_page(args: argparse.Namespace) -> ChromiumPage:
         page.run_js(STEALTH_JS)
     except Exception:
         pass
-
+    page.add_init_js(f"Element.prototype.{new_func_name} = Element.prototype.scrollIntoViewIfNeeded;")
     return page
 
 
