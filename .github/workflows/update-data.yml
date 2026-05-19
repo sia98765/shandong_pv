@@ -9,12 +9,18 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: shandong-pv-crawler
+  cancel-in-progress: false
+
 jobs:
   crawler:
     runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 360
 
     env:
       BAIDU_PROFILE_DIR: "C:\\Users\\Administrator\\actions-runner\\chrome_profiles\\baidu"
+      CHROME_DEBUG_PORT: "9222"
       PYTHONIOENCODING: utf-8
       PYTHONUTF8: "1"
 
@@ -23,60 +29,114 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 检查运行环境
-        shell: cmd
+        shell: powershell
         run: |
           chcp 65001
-          echo RUNNER_NAME=%RUNNER_NAME%
-          echo RUNNER_OS=%RUNNER_OS%
-          echo COMPUTERNAME=%COMPUTERNAME%
-          echo BAIDU_PROFILE_DIR=%BAIDU_PROFILE_DIR%
+          Write-Host "RUNNER_NAME=$env:RUNNER_NAME"
+          Write-Host "RUNNER_OS=$env:RUNNER_OS"
+          Write-Host "COMPUTERNAME=$env:COMPUTERNAME"
+          Write-Host "BAIDU_PROFILE_DIR=$env:BAIDU_PROFILE_DIR"
+          Write-Host "CHROME_DEBUG_PORT=$env:CHROME_DEBUG_PORT"
           python --version
           python -m pip --version
+          git --version
+
+      - name: 检查浏览器路径
+        shell: powershell
+        run: |
+          chcp 65001
+
+          $chrome1 = "$env:ProgramFiles\Google\Chrome\Application\chrome.exe"
+          $chrome2 = "${env:ProgramFiles(x86)}\Google\Chrome\Application\chrome.exe"
+          $edge1 = "$env:ProgramFiles\Microsoft\Edge\Application\msedge.exe"
+          $edge2 = "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe"
+
+          if (Test-Path $chrome1) {
+            $browser = $chrome1
+          } elseif (Test-Path $chrome2) {
+            $browser = $chrome2
+          } elseif (Test-Path $edge1) {
+            $browser = $edge1
+          } elseif (Test-Path $edge2) {
+            $browser = $edge2
+          } else {
+            throw "没有找到 Chrome 或 Edge，请先在这台 Windows Runner 上安装 Chrome。"
+          }
+
+          Write-Host "BROWSER_PATH=$browser"
+          "BROWSER_PATH=$browser" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
       - name: 创建必要目录
-        shell: cmd
+        shell: powershell
         run: |
           chcp 65001
-          if not exist data mkdir data
-          if not exist logs mkdir logs
-          if not exist logs\blocked_pages mkdir logs\blocked_pages
-          if not exist C:\Users\Administrator\actions-runner\chrome_profiles mkdir C:\Users\Administrator\actions-runner\chrome_profiles
-          if not exist C:\Users\Administrator\actions-runner\chrome_profiles\baidu mkdir C:\Users\Administrator\actions-runner\chrome_profiles\baidu
+          New-Item -ItemType Directory -Force -Path "data" | Out-Null
+          New-Item -ItemType Directory -Force -Path "logs" | Out-Null
+          New-Item -ItemType Directory -Force -Path "logs\blocked_pages" | Out-Null
+          New-Item -ItemType Directory -Force -Path "$env:BAIDU_PROFILE_DIR" | Out-Null
+
+      - name: 清理残留浏览器和调试端口
+        shell: powershell
+        run: |
+          chcp 65001
+
+          Write-Host "关闭残留 chrome/msedge 进程..."
+          Get-Process chrome,msedge -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+          Start-Sleep -Seconds 3
+
+          Write-Host "检查并清理 9222 端口..."
+          $conns = Get-NetTCPConnection -LocalPort $env:CHROME_DEBUG_PORT -ErrorAction SilentlyContinue
+          if ($conns) {
+            $conns | ForEach-Object {
+              Write-Host "Killing PID=$($_.OwningProcess) using port $env:CHROME_DEBUG_PORT"
+              Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue
+            }
+          } else {
+            Write-Host "端口 $env:CHROME_DEBUG_PORT 未被占用"
+          }
+
+          Write-Host "清理 Chrome 用户目录锁文件..."
+          Remove-Item "$env:BAIDU_PROFILE_DIR\Singleton*" -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:BAIDU_PROFILE_DIR\lockfile" -Force -ErrorAction SilentlyContinue
 
       - name: 安装 Python 依赖
-        shell: cmd
+        shell: powershell
         run: |
           chcp 65001
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com --no-cache-dir || ^
-          python -m pip install -r requirements.txt -i https://mirrors.cloud.tencent.com/pypi/simple --trusted-host mirrors.cloud.tencent.com --no-cache-dir || ^
-          python -m pip install -r requirements.txt -i https://repo.huaweicloud.com/repository/pypi/simple --trusted-host repo.huaweicloud.com --no-cache-dir || ^
-          python -m pip install -r requirements.txt
+          python -m pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+          python -m pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com --no-cache-dir
 
       - name: 运行百度低频采集脚本
-        shell: cmd
+        shell: powershell
         run: |
           chcp 65001
-          python crawler.py ^
-            --no-file-log ^
-            --no-detail-logs ^
-            --limit-queries 36 ^
-            --max-pages-per-query 3 ^
-            --query-sleep-min 90 ^
-            --query-sleep-max 180 ^
-            --page-sleep-min 10 ^
-            --page-sleep-max 20 ^
-            --after-load-sleep 5 ^
-            --restart-browser-every 1 ^
-            --restart-sleep 120
+          python crawler.py `
+            --no-file-log `
+            --no-detail-logs `
+            --limit-queries 36 `
+            --max-pages-per-query 3 `
+            --query-sleep-min 90 `
+            --query-sleep-max 180 `
+            --page-sleep-min 10 `
+            --page-sleep-max 20 `
+            --after-load-sleep 10 `
+            --restart-browser-every 1 `
+            --restart-sleep 30
 
       - name: 提交采集结果
-        shell: cmd
+        shell: powershell
         run: |
           chcp 65001
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git status
           git add data/shandong_pv_data.json data/meta.json logs/blocked_pages
-          git commit -m "update shandong pv data" || echo 没有数据变化
-          git push
+
+          git diff --cached --quiet
+          if ($LASTEXITCODE -eq 0) {
+            Write-Host "没有数据变化"
+          } else {
+            git commit -m "update shandong pv data"
+            git push
+          }
