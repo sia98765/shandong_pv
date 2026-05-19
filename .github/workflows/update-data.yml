@@ -95,7 +95,7 @@ jobs:
             --page-sleep-max 20 ^
             --after-load-sleep 5 ^
             --restart-browser-every 1 ^
-            --restart-sleep 120
+            --restart-sleep 60
 
       - name: 提交采集结果
         shell: cmd
