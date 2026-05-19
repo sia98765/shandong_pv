@@ -16,6 +16,7 @@ concurrency:
 jobs:
   crawler:
     runs-on: [self-hosted, Windows, X64]
+    timeout-minutes: 360
 
     env:
       BAIDU_PROFILE_DIR: "C:\\Users\\Administrator\\actions-runner\\chrome_profiles\\baidu"
@@ -25,85 +26,127 @@ jobs:
     steps:
       - name: 拉取仓库代码
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          clean: false
 
       - name: 添加 Git 到 PATH
-        shell: cmd
+        shell: powershell
         run: |
           chcp 65001
-          if exist "C:\Program Files\Git\cmd\git.exe" (
-            echo C:\Program Files\Git\cmd>> "%GITHUB_PATH%"
-            set "PATH=C:\Program Files\Git\cmd;%PATH%"
-            git --version
-          ) else if exist "C:\Program Files (x86)\Git\cmd\git.exe" (
-            echo C:\Program Files (x86)\Git\cmd>> "%GITHUB_PATH%"
-            set "PATH=C:\Program Files (x86)\Git\cmd;%PATH%"
-            git --version
-          ) else (
-            echo 没有找到 Git，请先安装 Git for Windows
-            exit /b 1
+
+          $gitPaths = @(
+            "C:\Program Files\Git\cmd",
+            "C:\Program Files (x86)\Git\cmd"
           )
 
+          $gitDir = $null
+
+          foreach ($p in $gitPaths) {
+            if (Test-Path "$p\git.exe") {
+              $gitDir = $p
+              break
+            }
+          }
+
+          if (-not $gitDir) {
+            throw "没有找到 Git，请先安装 Git for Windows"
+          }
+
+          Add-Content -Path $env:GITHUB_PATH -Value $gitDir
+          $env:Path = "$gitDir;$env:Path"
+
+          Write-Host "已添加 Git 到 PATH: $gitDir"
+          git --version
+
       - name: 检查运行环境
-        shell: cmd
+        shell: powershell
         run: |
           chcp 65001
-          echo RUNNER_NAME=%RUNNER_NAME%
-          echo RUNNER_OS=%RUNNER_OS%
-          echo COMPUTERNAME=%COMPUTERNAME%
-          echo BAIDU_PROFILE_DIR=%BAIDU_PROFILE_DIR%
+
+          Write-Host "RUNNER_NAME=$env:RUNNER_NAME"
+          Write-Host "RUNNER_OS=$env:RUNNER_OS"
+          Write-Host "COMPUTERNAME=$env:COMPUTERNAME"
+          Write-Host "BAIDU_PROFILE_DIR=$env:BAIDU_PROFILE_DIR"
+
           python --version
           python -m pip --version
           git --version
 
+          Write-Host "当前 Git 代理配置："
+          git config --global --get http.proxy
+          git config --global --get https.proxy
+
       - name: 创建必要目录
-        shell: cmd
+        shell: powershell
         run: |
           chcp 65001
-          if not exist data mkdir data
-          if not exist logs mkdir logs
-          if not exist logs\blocked_pages mkdir logs\blocked_pages
-          if not exist "C:\Users\Administrator\actions-runner\chrome_profiles" mkdir "C:\Users\Administrator\actions-runner\chrome_profiles"
-          if not exist "C:\Users\Administrator\actions-runner\chrome_profiles\baidu" mkdir "C:\Users\Administrator\actions-runner\chrome_profiles\baidu"
+
+          New-Item -ItemType Directory -Force -Path "data" | Out-Null
+          New-Item -ItemType Directory -Force -Path "logs" | Out-Null
+          New-Item -ItemType Directory -Force -Path "logs\blocked_pages" | Out-Null
+          New-Item -ItemType Directory -Force -Path "$env:BAIDU_PROFILE_DIR" | Out-Null
+
+          Write-Host "目录创建完成：$env:BAIDU_PROFILE_DIR"
 
       - name: 清理残留浏览器
-        shell: cmd
+        shell: powershell
         run: |
           chcp 65001
-          taskkill /F /IM chrome.exe /T 2>nul || echo 没有残留 chrome.exe
-          taskkill /F /IM msedge.exe /T 2>nul || echo 没有残留 msedge.exe
-          del /F /Q "C:\Users\Administrator\actions-runner\chrome_profiles\baidu\Singleton*" 2>nul || echo 没有 Chrome 锁文件
+
+          Write-Host "关闭残留 chrome/msedge 进程..."
+          Get-Process chrome,msedge -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
+
+          Start-Sleep -Seconds 3
+
+          Write-Host "清理 Chrome 用户目录锁文件..."
+          Remove-Item "$env:BAIDU_PROFILE_DIR\Singleton*" -Force -ErrorAction SilentlyContinue
+          Remove-Item "$env:BAIDU_PROFILE_DIR\lockfile" -Force -ErrorAction SilentlyContinue
+
+          Write-Host "清理完成"
 
       - name: 安装 Python 依赖
-        shell: cmd
+        shell: powershell
         run: |
           chcp 65001
+
           python -m pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
           python -m pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com --no-cache-dir
 
       - name: 运行百度低频采集脚本
-        shell: cmd
+        shell: powershell
         run: |
           chcp 65001
-          python crawler.py ^
-            --no-file-log ^
-            --no-detail-logs ^
-            --limit-queries 36 ^
-            --max-pages-per-query 3 ^
-            --query-sleep-min 90 ^
-            --query-sleep-max 180 ^
-            --page-sleep-min 10 ^
-            --page-sleep-max 20 ^
-            --after-load-sleep 5 ^
-            --restart-browser-every 1 ^
+
+          python crawler.py `
+            --no-file-log `
+            --no-detail-logs `
+            --limit-queries 36 `
+            --max-pages-per-query 3 `
+            --query-sleep-min 90 `
+            --query-sleep-max 180 `
+            --page-sleep-min 10 `
+            --page-sleep-max 20 `
+            --after-load-sleep 5 `
+            --restart-browser-every 1 `
             --restart-sleep 60
 
       - name: 提交采集结果
-        shell: cmd
+        shell: powershell
         run: |
           chcp 65001
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git status
+
           git add data/shandong_pv_data.json data/meta.json logs/blocked_pages
-          git commit -m "update shandong pv data" || echo 没有数据变化
-          git push
+
+          git diff --cached --quiet
+          if ($LASTEXITCODE -eq 0) {
+            Write-Host "没有数据变化"
+          } else {
+            git commit -m "update shandong pv data"
+            git push
+          }
