@@ -3,7 +3,7 @@ name: 山东光伏情报站 - 本机百度低频采集
 on:
   workflow_dispatch:
   schedule:
-    # 每天北京时间 09:00 运行一次；GitHub cron 使用 UTC 时间
+    # Beijing time 09:00, GitHub cron uses UTC
     - cron: "0 1 * * *"
 
 permissions:
@@ -24,13 +24,13 @@ jobs:
       PYTHONUTF8: "1"
 
     steps:
-      - name: 拉取仓库代码
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
           clean: false
 
-      - name: 添加 Git 到 PATH
+      - name: Add Git to PATH
         shell: powershell
         run: |
           chcp 65001
@@ -50,16 +50,16 @@ jobs:
           }
 
           if (-not $gitDir) {
-            throw "没有找到 Git，请先安装 Git for Windows"
+            throw "Git not found. Please install Git for Windows."
           }
 
           Add-Content -Path $env:GITHUB_PATH -Value $gitDir
           $env:Path = "$gitDir;$env:Path"
 
-          Write-Host "已添加 Git 到 PATH: $gitDir"
+          Write-Host "Git path added: $gitDir"
           git --version
 
-      - name: 检查运行环境
+      - name: Check runtime environment
         shell: powershell
         run: |
           chcp 65001
@@ -73,11 +73,21 @@ jobs:
           python -m pip --version
           git --version
 
-          Write-Host "当前 Git 代理配置："
-          git config --global --get http.proxy
-          git config --global --get https.proxy
+          Write-Host "Git proxy config:"
+          $httpProxy = git config --global --get http.proxy
+          if ($LASTEXITCODE -ne 0) {
+            $httpProxy = ""
+          }
 
-      - name: 创建必要目录
+          $httpsProxy = git config --global --get https.proxy
+          if ($LASTEXITCODE -ne 0) {
+            $httpsProxy = ""
+          }
+
+          Write-Host "http.proxy=$httpProxy"
+          Write-Host "https.proxy=$httpsProxy"
+
+      - name: Create required directories
         shell: powershell
         run: |
           chcp 65001
@@ -87,25 +97,25 @@ jobs:
           New-Item -ItemType Directory -Force -Path "logs\blocked_pages" | Out-Null
           New-Item -ItemType Directory -Force -Path "$env:BAIDU_PROFILE_DIR" | Out-Null
 
-          Write-Host "目录创建完成：$env:BAIDU_PROFILE_DIR"
+          Write-Host "Directories ready."
 
-      - name: 清理残留浏览器
+      - name: Clean browser processes
         shell: powershell
         run: |
           chcp 65001
 
-          Write-Host "关闭残留 chrome/msedge 进程..."
+          Write-Host "Stopping remaining chrome/msedge processes..."
           Get-Process chrome,msedge -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue
 
           Start-Sleep -Seconds 3
 
-          Write-Host "清理 Chrome 用户目录锁文件..."
+          Write-Host "Cleaning Chrome profile lock files..."
           Remove-Item "$env:BAIDU_PROFILE_DIR\Singleton*" -Force -ErrorAction SilentlyContinue
           Remove-Item "$env:BAIDU_PROFILE_DIR\lockfile" -Force -ErrorAction SilentlyContinue
 
-          Write-Host "清理完成"
+          Write-Host "Browser cleanup done."
 
-      - name: 安装 Python 依赖
+      - name: Install Python dependencies
         shell: powershell
         run: |
           chcp 65001
@@ -113,7 +123,7 @@ jobs:
           python -m pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
           python -m pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com --no-cache-dir
 
-      - name: 运行百度低频采集脚本
+      - name: Run crawler
         shell: powershell
         run: |
           chcp 65001
@@ -131,7 +141,7 @@ jobs:
             --restart-browser-every 1 `
             --restart-sleep 60
 
-      - name: 提交采集结果
+      - name: Commit crawler results
         shell: powershell
         run: |
           chcp 65001
@@ -145,7 +155,7 @@ jobs:
 
           git diff --cached --quiet
           if ($LASTEXITCODE -eq 0) {
-            Write-Host "没有数据变化"
+            Write-Host "No changes to commit."
           } else {
             git commit -m "update shandong pv data"
             git push
