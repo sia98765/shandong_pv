@@ -48,7 +48,10 @@ jobs:
         run: |
           chcp 65001
           python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+          python -m pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com --no-cache-dir || ^
+          python -m pip install -r requirements.txt -i https://mirrors.cloud.tencent.com/pypi/simple --trusted-host mirrors.cloud.tencent.com --no-cache-dir || ^
+          python -m pip install -r requirements.txt -i https://repo.huaweicloud.com/repository/pypi/simple --trusted-host repo.huaweicloud.com --no-cache-dir || ^
+          python -m pip install -r requirements.txt
 
       - name: 运行百度低频采集脚本
         shell: cmd
