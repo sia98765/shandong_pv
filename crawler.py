@@ -1067,7 +1067,7 @@ def open_baidu_search_page(page: ChromiumPage, query: str, count: int, timeout: 
     logging.debug("DrissionPage Baidu URL: %s", url)
     try:
         page.get(url, timeout=timeout)
-        time.sleep(after_load_sleep)
+        time.sleep(30)
         try:
             page.run_js(STEALTH_JS)
         except Exception:
