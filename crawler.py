@@ -77,9 +77,10 @@ except Exception as e:
 # =========================================================
 # 1. 基础配置
 # =========================================================
-
 PV_SEARCH_CONFIG = {
     "official_websites": {
+        # ===== 山东省级/国家级/行业重点数据源 =====
+        "北极星太阳能光伏网": "https://guangfu.bjx.com.cn",
         "山东能源监管办": "https://sdb.nea.gov.cn",
         "山东省能源局": "http://nyj.shandong.gov.cn",
         "国家能源局": "https://www.nea.gov.cn",
@@ -88,9 +89,24 @@ PV_SEARCH_CONFIG = {
         "山东政府采购网": "http://www.ccgp-shandong.gov.cn",
         "中能建电子采购平台": "https://ec.ceec.net.cn",
         "中国电建集采平台": "https://ec.powerchina.cn",
-        "济南公共资源交易中心": "http://jnggzy.jinan.gov.cn",
-        "青岛公共资源交易中心": "https://ggzy.qingdao.gov.cn",
-        "北极星太阳能光伏网": "https://guangfu.bjx.com.cn",
+
+        # ===== 山东各地市公共资源交易平台 =====
+        "济南公共资源交易中心": "https://jnggzy.jinan.gov.cn/",
+        "青岛公共资源交易中心": "https://ggzy.qingdao.gov.cn/PortalQDManage/",
+        "淄博公共资源交易中心": "http://ggzyjy.zibo.gov.cn:8082/",
+        "枣庄公共资源交易中心": "http://ggzy.zaozhuang.gov.cn/",
+        "东营公共资源交易中心": "http://ggzy.dongying.gov.cn/",
+        "烟台公共资源交易中心": "https://ggzyjy.yantai.gov.cn/",
+        "潍坊公共资源交易中心": "http://ggzy.weifang.gov.cn:8082/wfggzy/",
+        "济宁公共资源交易中心": "https://jnsggzy.cn/JiNing",
+        "泰安公共资源交易中心": "http://www.taggzyjy.com.cn/",
+        "威海公共资源交易中心": "https://ggzyjy.weihai.cn/",
+        "日照公共资源交易中心": "http://ggzyjy.rizhao.gov.cn/rzwz/",
+        "临沂公共资源交易中心": "https://ggzyjy.linyi.gov.cn/linyi/",
+        "德州公共资源交易中心": "https://ggzyjy.dezhou.gov.cn/TPFront/",
+        "聊城公共资源交易中心": "http://ggzyjy.liaocheng.gov.cn/",
+        "滨州公共资源交易中心": "https://jypt.bzggzyjy.cn/bzweb/default/indexnew.html",
+        "菏泽公共资源交易中心": "http://hzsjyzx.cn/",
     }
 }
 
