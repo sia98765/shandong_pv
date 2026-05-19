@@ -14,9 +14,9 @@ jobs:
     runs-on: [self-hosted, Windows, X64]
 
     env:
-      # 预留给脚本使用：建议你后续把脚本浏览器目录改成读取这个环境变量
-      BAIDU_PROFILE_DIR: D:\actions-runner\chrome_profiles\baidu
+      BAIDU_PROFILE_DIR: "C:\\Users\\Administrator\\actions-runner\\chrome_profiles\\baidu"
       PYTHONIOENCODING: utf-8
+      PYTHONUTF8: "1"
 
     steps:
       - name: 拉取仓库代码
@@ -25,31 +25,35 @@ jobs:
       - name: 检查运行环境
         shell: cmd
         run: |
+          chcp 65001
           echo RUNNER_NAME=%RUNNER_NAME%
           echo RUNNER_OS=%RUNNER_OS%
           echo COMPUTERNAME=%COMPUTERNAME%
           echo BAIDU_PROFILE_DIR=%BAIDU_PROFILE_DIR%
           python --version
-          pip --version
+          python -m pip --version
 
       - name: 创建必要目录
         shell: cmd
         run: |
+          chcp 65001
           if not exist data mkdir data
           if not exist logs mkdir logs
           if not exist logs\blocked_pages mkdir logs\blocked_pages
-          if not exist D:\actions-runner\chrome_profiles mkdir D:\actions-runner\chrome_profiles
-          if not exist D:\actions-runner\chrome_profiles\baidu mkdir D:\actions-runner\chrome_profiles\baidu
+          if not exist C:\Users\Administrator\actions-runner\chrome_profiles mkdir C:\Users\Administrator\actions-runner\chrome_profiles
+          if not exist C:\Users\Administrator\actions-runner\chrome_profiles\baidu mkdir C:\Users\Administrator\actions-runner\chrome_profiles\baidu
 
       - name: 安装 Python 依赖
         shell: cmd
         run: |
+          chcp 65001
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          python -m pip install -r requirements.txt
 
       - name: 运行百度低频采集脚本
         shell: cmd
         run: |
+          chcp 65001
           python crawler.py ^
             --no-file-log ^
             --no-detail-logs ^
@@ -66,8 +70,10 @@ jobs:
       - name: 提交采集结果
         shell: cmd
         run: |
+          chcp 65001
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git status
           git add data/shandong_pv_data.json data/meta.json logs/blocked_pages
           git commit -m "update shandong pv data" || echo 没有数据变化
           git push
