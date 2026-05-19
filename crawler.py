@@ -762,7 +762,7 @@ def build_drission_page(args: argparse.Namespace) -> ChromiumPage:
     # 独立用户目录，保留少量 Cookie，比每次全新环境更稳定。
     user_data_dir = Path(os.environ.get(
         "BAIDU_PROFILE_DIR",
-        r"D:\actions-runner\chrome_profiles\baidu"
+        r"C:\Users\Administrator\actions-runner\chrome_profiles\baidu"
     ))
     if args.fresh_profile and user_data_dir.exists():
         shutil.rmtree(user_data_dir, ignore_errors=True)
