@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-20T16:45:49+08:00",
-  "total": 152,
+  "generated_at": "2026-05-21T02:12:51+08:00",
+  "total": 153,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-05-19",
+    "cutoff_date": "2024-05-20",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -54,9 +54,25 @@
   "category_stats": {
     "policy": 40,
     "market": 11,
-    "project": 101
+    "project": 102
   },
   "items": [
+    {
+      "id": "91748117b99989b4",
+      "title": "...潍坊市光储充停一体化充电基础设施建设 项目 (一期)招标公告",
+      "content": "...潍坊市光储充停一体化充电基础设施建设 项目 (一期)招标公告 2天前 项目 已具备招标条件,现对该项目进行公开招标。 2.项目概况与招标范围 2.1建设地点:金马怡园西场站、虞河景区宝通街南场站、风筝博物馆场站、金都国际广场场站。 2.2建设规模:本项目包含金马怡园西场站、虞河景区宝通街南场站等四处光储充停一体化独立场站的充电设施、 光伏 发电系统、储能系统、停车配套设施以及... ggzy.weifang.gov.cn:8082/wfggzy/jyxx...  播报  暂停 2天前 项目 已具备招标条件,现对该项目进行公开招标。 2.项目概况与招标范围 2.1建设地点:金马怡园西场站、虞河景区宝通街南场站、风筝博物馆场站、金都国际广场场站。 2.2建设规模:本项目包含金马怡园西场站、虞河景区宝通街南...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "潍坊公共资源交易中心",
+      "publish_date": "2026-05-20",
+      "homepage_url": "http://ggzy.weifang.gov.cn:8082/wfggzy/",
+      "baidu_search_url": "https://www.baidu.com/s?wd=...%E6%BD%8D%E5%9D%8A%E5%B8%82%E5%85%89%E5%82%A8%E5%85%85%E5%81%9C%E4%B8%80%E4%BD%93%E5%8C%96%E5%85%85%E7%94%B5%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%BB%BA%E8%AE%BE+%E9%A1%B9%E7%9B%AE+%28%E4%B8%80%E6%9C%9F%29%E6%8B%9B%E6%A0%87%E5%85%AC%E5%91%8A",
+      "original_url": "http://ggzy.weifang.gov.cn:8082/wfggzy/jyxx/007001/007001001/20260520/baca9587-a3df-4e58-9da0-1e05f85247b0.html",
+      "collected_at": "2026-05-21T01:26:06+08:00",
+      "relevance_score": 22,
+      "matched_query": "site:ggzy.weifang.gov.cn 光伏项目",
+      "time_hint": "publish_date:2026-05-20"
+    },
     {
       "id": "2fff56b669940a6a",
       "title": "潍坊市公共资源交易中心-潍坊辰盈商业运营管理有限公司 项目 招标...",
