@@ -3,8 +3,8 @@ name: 山东光伏情报站 - 本机百度低频采集
 on:
   workflow_dispatch:
   schedule:
-    # Beijing time 09:00, GitHub cron uses UTC
-    - cron: "0 1 * * *"
+    - cron: "7 10 * * *"  # 北京时间 18:07
+    - cron: "7 16 * * *"  # 北京时间 00:07
 
 permissions:
   contents: write
