@@ -1,0 +1,23 @@
+name: 测试定时任务
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  test:
+    runs-on: [self-hosted, Windows, X64]
+
+    steps:
+      - name: Print trigger info
+        shell: powershell
+        run: |
+          chcp 65001
+          Write-Host "GITHUB_EVENT_NAME=$env:GITHUB_EVENT_NAME"
+          Write-Host "RUNNER_NAME=$env:RUNNER_NAME"
+          Write-Host "RUNNER_OS=$env:RUNNER_OS"
+          Write-Host "北京时间："
+          Get-Date
+          Write-Host "UTC 时间："
+          Get-Date -AsUTC
