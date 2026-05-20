@@ -2,22 +2,24 @@ name: 测试定时任务
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/test-schedule.yml"
   schedule:
-    - cron: "*/5 * * * *"
+    # 错峰测试：每小时 2、7、12... 分运行
+    - cron: "2,7,12,17,22,27,32,37,42,47,52,57 * * * *"
 
 jobs:
   test:
-    runs-on: [self-hosted, Windows, X64]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Print trigger info
-        shell: powershell
         run: |
-          chcp 65001
-          Write-Host "GITHUB_EVENT_NAME=$env:GITHUB_EVENT_NAME"
-          Write-Host "RUNNER_NAME=$env:RUNNER_NAME"
-          Write-Host "RUNNER_OS=$env:RUNNER_OS"
-          Write-Host "北京时间："
-          Get-Date
-          Write-Host "UTC 时间："
-          Get-Date -AsUTC
+          echo "GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME"
+          echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
+          echo "GITHUB_REF=$GITHUB_REF"
+          echo "UTC time:"
+          date -u
