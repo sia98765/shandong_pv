@@ -1,4 +1,4 @@
-name: 测试定时任务
+name: schedule-smoke-test
 
 on:
   workflow_dispatch:
@@ -8,8 +8,7 @@ on:
     paths:
       - ".github/workflows/test-schedule.yml"
   schedule:
-    # 错峰测试：每小时 2、7、12... 分运行
-    - cron: "2,7,12,17,22,27,32,37,42,47,52,57 * * * *"
+    - cron: "3,8,13,18,23,28,33,38,43,48,53,58 * * * *"
 
 jobs:
   test:
