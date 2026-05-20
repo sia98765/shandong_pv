@@ -131,7 +131,7 @@ jobs:
           python crawler.py `
             --no-file-log `
             --no-detail-logs `
-            --limit-queries 36 `
+            --limit-queries 0 `
             --max-pages-per-query 3 `
             --query-sleep-min 90 `
             --query-sleep-max 180 `
