@@ -3,8 +3,8 @@ name: 山东光伏情报站 - 本机百度低频采集
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 4 * * *"   # 北京时间 12:17
-    - cron: "40 15 * * *"  # 北京时间 23:17
+    - cron: "2 4 * * *"    # 北京时间 12:00
+    - cron: "2 16 * * *"   # 北京时间 00:02
 
 permissions:
   contents: write
