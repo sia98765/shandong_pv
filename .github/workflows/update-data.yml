@@ -132,7 +132,7 @@ jobs:
             --no-file-log `
             --no-detail-logs `
             --limit-queries 0 `
-            --max-pages-per-query 3 `
+            --max-pages-per-query 2 `
             --query-sleep-min 90 `
             --query-sleep-max 180 `
             --page-sleep-min 10 `
