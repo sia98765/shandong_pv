@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-21T04:38:33+08:00",
-  "total": 155,
+  "generated_at": "2026-05-21T19:02:43+08:00",
+  "total": 191,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
@@ -8,18 +8,21 @@
     "allow_undated_default": false
   },
   "query_scope": {
-    "mode": "baidu_fixed_site_keyword_plus_global_shandong",
-    "site_keywords": [
-      "光伏政策",
-      "光伏市场分析",
-      "光伏项目"
+    "mode": "baidu_home_site_domain_keyword_click_search_simple_query_config",
+    "query_config_categories": {
+      "policy": "光伏政策",
+      "market": "市场分析",
+      "project": "项目信息",
+      "source_grid_load_storage": "源网荷储"
+    },
+    "keyword_queries": [
+      "山东 光伏 分布式光伏 工商业光伏 政策 通知 补贴 并网",
+      "山东 光伏 市场 装机 发电量 电价 消纳 数据 分析",
+      "山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
+      "山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应"
     ],
-    "global_queries": [
-      "光伏项目 山东省",
-      "光伏市场分析 山东省",
-      "光伏政策 山东省"
-    ],
-    "query_example": "site:sdb.nea.gov.cn 光伏政策",
+    "query_example": "site:nyj.shandong.gov.cn 山东 光伏 分布式光伏 工商业光伏 政策 通知 补贴 并网",
+    "site_query_removed": false,
     "websites": {
       "北极星太阳能光伏网": "https://guangfu.bjx.com.cn",
       "山东能源监管办": "https://sdb.nea.gov.cn",
@@ -47,13 +50,14 @@
       "滨州公共资源交易中心": "https://jypt.bzggzyjy.cn/bzweb/default/indexnew.html",
       "菏泽公共资源交易中心": "http://hzsjyzx.cn/"
     },
-    "query_count": 78,
+    "query_count": 100,
     "provider": "baidu",
     "path_positive_rules_removed": true
   },
   "category_stats": {
-    "policy": 40,
-    "market": 11,
-    "project": 104
+    "market": 20,
+    "policy": 43,
+    "project": 114,
+    "source_grid_load_storage": 14
   }
 }
