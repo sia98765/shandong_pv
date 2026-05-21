@@ -1,26 +1,27 @@
 # -*- coding: utf-8 -*-
 """
-山东光伏情报站 - DrissionPage + 百度检索版 V36
+山东光伏情报站 - DrissionPage + 百度地址+关键词检索版 V39
 
 适配场景：
 1. 本地 Windows / Linux 运行；
 2. GitHub Actions + Xvfb 虚拟窗口运行；
-3. 不进入详情页，只收录百度搜索结果里的标题、摘要、URL、日期；
+3. 每个 query 都先打开百度首页，再输入关键词并点击“百度一下”；不进入详情页，只收录百度搜索结果里的标题、摘要、URL、日期；
 4. 默认不使用 --headless，降低百度验证概率；
 5. 检测到百度安全验证 / 验证码页面时，保存 HTML + 截图，并停止任务，避免越刷越容易触发风控；
 6. 默认每查询 3 个 query 后关闭浏览器，暂停 60 秒，再重新打开浏览器继续；
 7. 实时写入 ./data/shandong_pv_data.json；
 8. 保留近 N 年发布日期数据，默认近 2 年；
-9. 只保留你配置的 11 个数据源域名结果。
+9. 默认只保留配置的数据源域名结果；如需放开可加 --allow-outside-domains；
+10. 默认每个配置地址都会和 QUERY_CONFIG 里的关键词组合，输入百度格式为：site:域名 关键词；如需只按关键词查询可加 --keyword-only。
 
 安装依赖：
     pip install DrissionPage beautifulsoup4 lxml requests
 
 本地测试：
-    python crawler_baidu_actions_v36.py --overwrite --debug --limit-queries 3 --max-pages-per-query 1
+    python crawler_baidu_actions_v39_site_query_config.py --overwrite --debug --limit-queries 3 --max-pages-per-query 1
 
 GitHub Actions 推荐运行方式，不要加 --headless：
-    xvfb-run -a -s "-screen 0 1366x900x24" python crawler_baidu_actions_v36.py \
+    xvfb-run -a -s "-screen 0 1366x900x24" python crawler_baidu_actions_v39_site_query_config.py \
       --overwrite \
       --no-file-log \
       --no-detail-logs \
@@ -73,7 +74,6 @@ except Exception as e:
         "未安装 DrissionPage，请先执行：pip install DrissionPage beautifulsoup4 lxml requests"
     ) from e
 
-
 # =========================================================
 # 1. 基础配置
 # =========================================================
@@ -112,16 +112,133 @@ PV_SEARCH_CONFIG = {
 
 SEARCH_KEYWORD = "光伏"
 
-SITE_QUERY_KEYWORDS = [
-    ("光伏政策", "policy"),
-    ("光伏市场分析", "market"),
-    ("光伏项目", "project"),
-]
+# =========================================================
+# 简化版查询配置：以后新增查询词 / 新增类目，只改 QUERY_CONFIG
+# =========================================================
+# 配置说明：
+# 1. 每个一级 key 是分类编码，建议用英文，例如 policy、project、source_grid_load_storage。
+# 2. label 是前端/JSON 中显示的中文类目名称。
+# 3. keywords 用于分类识别和相关性加分。
+# 4. queries 是真正输入百度搜索框的关键词，不会自动拼接 site:。
+# 5. 新增查询词：只在对应分类的 queries 里加一行字符串。
+# 6. 新增类目：复制一个分类块，改 key、label、keywords、queries 即可。
+QUERY_CONFIG = {
+    "policy": {
+        "label": "光伏政策",
+        "keywords": [
+            "政策", "通知", "办法", "实施细则", "规则", "征求意见", "监管", "管理", "方案",
+            "补贴", "规划", "文件", "规定", "解读", "印发", "改革", "细则", "申报",
+            "用地", "配储", "整县推进", "并网政策",
+        ],
+        "queries": [
+            "山东 光伏 分布式光伏 工商业光伏 政策 通知 补贴 并网",
+        ],
+    },
 
-GLOBAL_QUERIES = [
-    ("光伏项目 山东省", "project"),
-    ("光伏市场分析 山东省", "market"),
-    ("光伏政策 山东省", "policy"),
+    "market": {
+        "label": "市场分析",
+        "keywords": [
+            "市场", "分析", "报告", "装机", "发电量", "电价", "价格", "趋势", "数据",
+            "统计", "预测", "消纳", "产业", "观察", "研究", "规模", "发展", "机制电价",
+            "竞价", "收益", "调研", "现状", "前景", "容量统计",
+        ],
+        "queries": [
+            "山东 光伏 市场 装机 发电量 电价 消纳 数据 分析",
+        ],
+    },
+
+    "project": {
+        "label": "项目信息",
+        "keywords": [
+            "项目", "招标", "中标", "采购", "成交", "EPC", "候选人", "备案", "公示",
+            "开工", "并网", "集采", "标段", "合同", "结果公告", "成交公告", "竞争性磋商",
+            "询价", "公告", "招标计划", "名单", "清单", "投资主体", "项目进展",
+        ],
+        "queries": [
+            "山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
+        ],
+    },
+
+    "source_grid_load_storage": {
+        "label": "源网荷储",
+        "keywords": [
+            "源网荷储", "源网荷储一体化", "源网荷储项目", "源网荷储一体化项目",
+            "源网荷储协同", "源网荷储互动", "源网荷储示范",
+            "新能源", "储能", "负荷", "电网", "调峰", "消纳",
+            "虚拟电厂", "需求响应", "综合能源", "多能互补",
+        ],
+        "queries": [
+            "山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
+        ],
+    },
+}
+
+
+def _clean_config_text(value: object) -> str:
+    """配置区专用清洗函数。注意：这里不能调用 clean_text，因为 clean_text 在后面才定义。"""
+    if value is None:
+        return ""
+    text = html.unescape(str(value))
+    text = re.sub(r"[\u00a0\u3000\t\r\n]+", " ", text)
+    text = re.sub(r"\s{2,}", " ", text)
+    return text.strip(" -_丨|·\t\r\n ")
+
+
+def _unique_clean_list(values: Iterable[str]) -> List[str]:
+    """清洗配置列表，去空、去重并保留原顺序。"""
+    result: List[str] = []
+    seen: Set[str] = set()
+    for value in values or []:
+        value = _clean_config_text(value)
+        if not value or value in seen:
+            continue
+        seen.add(value)
+        result.append(value)
+    return result
+
+
+def normalize_query_config(config: dict) -> dict:
+    """标准化 QUERY_CONFIG，避免空关键词、空查询、重复查询影响运行。"""
+    normalized = {}
+    for category, item in (config or {}).items():
+        if not isinstance(item, dict):
+            continue
+        category = _clean_config_text(category)
+        if not category:
+            continue
+        label = _clean_config_text(item.get("label") or category)
+        keywords = _unique_clean_list(item.get("keywords") or [])
+        queries = _unique_clean_list(item.get("queries") or [])
+        normalized[category] = {
+            "label": label,
+            "keywords": keywords,
+            "queries": queries,
+        }
+    return normalized
+
+
+QUERY_CONFIG = normalize_query_config(QUERY_CONFIG)
+
+# 以下配置由 QUERY_CONFIG 自动生成，正常情况下不要手动改。
+CATEGORY_LABEL = {
+    category: item["label"]
+    for category, item in QUERY_CONFIG.items()
+}
+
+CATEGORY_KEYWORDS = {
+    category: item["keywords"]
+    for category, item in QUERY_CONFIG.items()
+}
+
+CATEGORY_BOOST_PATTERNS = {
+    category: "|".join(re.escape(word) for word in item["keywords"] if word)
+    for category, item in QUERY_CONFIG.items()
+}
+
+KEYWORD_QUERIES = [
+    (query, category)
+    for category, item in QUERY_CONFIG.items()
+    for query in item["queries"]
 ]
 
 LOCAL_SHANDONG_SOURCE_NAMES = {
@@ -132,16 +249,11 @@ LOCAL_SHANDONG_SOURCE_NAMES = {
     "青岛公共资源交易中心",
 }
 
-CATEGORY_LABEL = {
-    "market": "市场分析",
-    "policy": "光伏政策",
-    "project": "项目信息",
-}
-
 PV_TERMS = [
     "光伏", "分布式光伏", "集中式光伏", "太阳能光伏", "光伏发电",
     "屋顶光伏", "户用光伏", "工商业光伏", "光伏电站", "光伏组件",
     "海上光伏", "农光互补", "渔光互补", "新能源", "储能",
+    "源网荷储", "源网荷储一体化", "虚拟电厂", "需求响应", "综合能源",
 ]
 
 SHANDONG_TERMS = [
@@ -152,24 +264,6 @@ SHANDONG_TERMS = [
     "heze", "zaozhuang", "taian", "rizhao", "weihai", "liaocheng",
     "sdb.nea", "nyj.shandong", "ccgp-shandong", "jnggzy.jinan", "ggzy.qingdao",
 ]
-
-CATEGORY_KEYWORDS = {
-    "policy": [
-        "政策", "通知", "办法", "实施细则", "规则", "征求意见", "监管", "管理", "方案",
-        "补贴", "规划", "文件", "规定", "解读", "印发", "改革", "细则", "申报",
-        "用地", "配储", "整县推进", "并网政策",
-    ],
-    "market": [
-        "市场", "分析", "报告", "装机", "发电量", "电价", "价格", "趋势", "数据",
-        "统计", "预测", "消纳", "产业", "观察", "研究", "规模", "发展", "机制电价",
-        "竞价", "收益", "调研", "现状", "前景", "容量统计",
-    ],
-    "project": [
-        "项目", "招标", "中标", "采购", "成交", "EPC", "候选人", "备案", "公示",
-        "开工", "并网", "集采", "标段", "合同", "结果公告", "成交公告", "竞争性磋商",
-        "询价", "公告", "招标计划", "名单", "清单", "投资主体", "项目进展",
-    ],
-}
 
 NEGATIVE_TITLE_KEYWORDS = [
     "旅游", "景点", "攻略", "门票", "酒店", "机票", "美食", "游记", "自驾游",
@@ -212,7 +306,7 @@ class SearchPlan:
     source: str
     site_domain: str
     category: str = "policy"
-    strict_site: bool = True
+    strict_site: bool = False
     keyword: str = SEARCH_KEYWORD
 
 
@@ -227,7 +321,7 @@ class SearchHit:
     query: str = ""
     site_domain: str = ""
     rank: int = 0
-    provider: str = "drission_baidu_v36"
+    provider: str = "drission_baidu_v39"
 
 
 @dataclass
@@ -555,15 +649,16 @@ def is_obvious_home_or_invalid_page(title: str, url: str) -> bool:
 
 def infer_category_from_text(text: str, default: str = "policy") -> str:
     low = (text or "").lower()
-    scores = {"policy": 0, "market": 0, "project": 0}
+    scores = {cat: 0 for cat in CATEGORY_LABEL.keys()}
     for cat, words in CATEGORY_KEYWORDS.items():
+        scores.setdefault(cat, 0)
         scores[cat] += count_hits(low, words)
-    if re.search(r"招标|中标|成交|采购|epc|候选人|备案|公示|项目|标段|合同|公告|磋商|询价|名单|清单", low, re.I):
-        scores["project"] += 5
-    if re.search(r"市场|分析|报告|装机|发电量|电价|数据|趋势|消纳|产业|统计|观察|研究|机制电价|竞价|收益|调研|现状|前景", low):
-        scores["market"] += 5
-    if re.search(r"政策|通知|办法|细则|规则|监管|补贴|规划|方案|解读|印发|改革|申报|用地|配储", low):
-        scores["policy"] += 5
+    for cat, pattern in CATEGORY_BOOST_PATTERNS.items():
+        if pattern and re.search(pattern, low, re.I):
+            scores.setdefault(cat, 0)
+            scores[cat] += 5
+    if not scores:
+        return default
     best, score = max(scores.items(), key=lambda kv: kv[1])
     return best if score > 0 else default
 
@@ -575,12 +670,13 @@ def relevance_score(title: str, snippet: str, url: str, query: str, plan: Search
         score += 8
     if has_pv_topic(text):
         score += 6
-    elif plan.strict_site and same_or_subdomain(host_of(url), plan.site_domain) and SEARCH_KEYWORD in query:
-        score += 3
     if has_shandong_signal(text, url, source_name_for_url(url)):
         score += 4
     for words in CATEGORY_KEYWORDS.values():
         score += min(count_hits(text, words), 3)
+    for cat, pattern in CATEGORY_BOOST_PATTERNS.items():
+        if pattern and re.search(pattern, text, re.I):
+            score += 2
     return score
 
 
@@ -599,8 +695,8 @@ def reject_reason(title: str, snippet: str, url: str, query: str, plan: SearchPl
         return f"噪声域名：{host_of(url)}"
     if contains_any(f"{title} {url}".lower(), NEGATIVE_TITLE_KEYWORDS):
         return "标题/URL 命中旅游/百科/地图/招聘等负面关键词"
-    if not is_configured_domain(url):
-        return f"非指定的 11 个数据源域名：{host_of(url)}"
+    if args.only_configured_domains and not is_configured_domain(url):
+        return f"非配置数据源域名：{host_of(url)}。如需放开，请运行时加 --allow-outside-domains"
     if plan.strict_site and not same_or_subdomain(host_of(url), plan.site_domain):
         return f"严格 site 查询返回非目标域名：期望 {plan.site_domain}，实际 {host_of(url)}"
     if is_obvious_home_or_invalid_page(title, url):
@@ -608,12 +704,12 @@ def reject_reason(title: str, snippet: str, url: str, query: str, plan: SearchPl
     if not has_shandong_signal(text, url, source):
         return "缺少山东地域信号"
     if not has_pv_topic(text):
-        if not (plan.strict_site and same_or_subdomain(host_of(url), plan.site_domain) and SEARCH_KEYWORD in query):
-            return "缺少光伏/新能源有效上下文"
+        return "缺少光伏/新能源有效上下文"
     return ""
 
 
-def accept_result(title: str, snippet: str, url: str, query: str, plan: SearchPlan, args: argparse.Namespace) -> Tuple[bool, str, int]:
+def accept_result(title: str, snippet: str, url: str, query: str, plan: SearchPlan, args: argparse.Namespace) -> Tuple[
+    bool, str, int]:
     reason = reject_reason(title, snippet, url, query, plan, args)
     score = relevance_score(title, snippet, url, query, plan)
     if reason:
@@ -762,7 +858,7 @@ def build_drission_page(args: argparse.Namespace) -> ChromiumPage:
     # 独立用户目录，保留少量 Cookie，比每次全新环境更稳定。
     user_data_dir = Path(os.environ.get(
         "BAIDU_PROFILE_DIR",
-        r"C:\Users\Administrator\actions-runner\chrome_profiles\baidu"
+        r"D:\actions-runner\chrome_profiles\baidu"
     ))
     if args.fresh_profile and user_data_dir.exists():
         shutil.rmtree(user_data_dir, ignore_errors=True)
@@ -864,14 +960,14 @@ def build_baidu_search_url(query: str, count: int, page_no: int) -> str:
     rn = max(10, min(int(count or 10), 50))
     pn = max(0, (page_no - 1) * rn)
     return (
-        "https://www.baidu.com/s?"
-        f"wd={quote_plus(query)}"
-        f"&rn={rn}"
-        f"&pn={pn}"
-        "&ie=utf-8"
-        "&tn=baiduhome_pg"
-        "&f=8"
-        "&oq=" + quote_plus(query)
+            "https://www.baidu.com/s?"
+            f"wd={quote_plus(query)}"
+            f"&rn={rn}"
+            f"&pn={pn}"
+            "&ie=utf-8"
+            "&tn=baiduhome_pg"
+            "&f=8"
+            "&oq=" + quote_plus(query)
     )
 
 
@@ -978,7 +1074,8 @@ def extract_url_from_baidu_container(container, title_a) -> str:
     return ""
 
 
-def extract_baidu_results(html_text: str, query: str, page_no: int, count: int, resolve_redirects: bool = False) -> List[SearchHit]:
+def extract_baidu_results(html_text: str, query: str, page_no: int, count: int, resolve_redirects: bool = False) -> \
+        List[SearchHit]:
     soup = BeautifulSoup(html_text or "", "html.parser")
     hits: List[SearchHit] = []
     seen: Set[str] = set()
@@ -1055,29 +1152,127 @@ def extract_baidu_results(html_text: str, query: str, page_no: int, count: int, 
                 publish_date=publish_date,
                 query=query,
                 rank=rank_base + len(hits) + 1,
-                provider="drission_baidu_v36",
+                provider="drission_baidu_v39",
             )
         )
 
     return hits
 
 
-def open_baidu_search_page(page: ChromiumPage, query: str, count: int, timeout: int, page_no: int, after_load_sleep: float) -> bool:
-    url = build_baidu_search_url(query=query, count=count, page_no=page_no)
-    logging.debug("DrissionPage Baidu URL: %s", url)
+def check_baidu_blocked_or_raise(page: ChromiumPage) -> None:
+    html_text = get_page_html(page)
+    cur_url = current_page_url(page)
+    if is_baidu_blocked_html(html_text, cur_url):
+        save_blocked_artifacts(page, html_text, reason="baidu_verify")
+        raise SearchBlockedError(f"百度触发验证/风控页面：{cur_url}")
+
+
+def find_page_ele(page: ChromiumPage, selectors: Iterable[str], timeout: float = 3):
+    for selector in selectors:
+        try:
+            ele = page.ele(selector, timeout=timeout)
+            if ele:
+                return ele
+        except Exception:
+            continue
+    return None
+
+
+def set_baidu_keyword_by_js(page: ChromiumPage, query: str) -> None:
+    query_json = json.dumps(query, ensure_ascii=False)
+    page.run_js(f"""
+        const kw = document.querySelector('#kw') || document.querySelector('input[name="wd"]');
+        if (!kw) throw new Error('未找到百度搜索框 #kw');
+        kw.focus();
+        kw.value = {query_json};
+        kw.dispatchEvent(new Event('input', {{ bubbles: true }}));
+        kw.dispatchEvent(new Event('change', {{ bubbles: true }}));
+    """)
+
+
+def click_baidu_search_by_js(page: ChromiumPage) -> None:
+    page.run_js("""
+        const btn = document.querySelector('#su') || document.querySelector('input[type="submit"]');
+        if (!btn) throw new Error('未找到百度搜索按钮 #su');
+        btn.click();
+    """)
+
+
+def wait_baidu_result_page(page: ChromiumPage, timeout: int, after_load_sleep: float) -> None:
+    deadline = time.time() + max(5, int(timeout or 35))
+    while time.time() < deadline:
+        time.sleep(0.5)
+        check_baidu_blocked_or_raise(page)
+        cur_url = current_page_url(page)
+        html_text = get_page_html(page)
+        if ("/s?" in cur_url or "baidu.com/s" in cur_url) and (
+                "content_left" in html_text or "c-container" in html_text):
+            break
+    time.sleep(after_load_sleep)
     try:
+        page.run_js(STEALTH_JS)
+    except Exception:
+        pass
+    check_baidu_blocked_or_raise(page)
+
+
+def open_baidu_home_and_submit(page: ChromiumPage, query: str, timeout: int, after_load_sleep: float) -> bool:
+    """先打开百度首页，再输入关键词并点击查询。"""
+    try:
+        logging.debug("打开百度首页并输入关键词：%s", query)
+        page.get("https://www.baidu.com/", timeout=timeout)
+        time.sleep(max(0.5, min(2.0, after_load_sleep)))
+        try:
+            page.run_js(STEALTH_JS)
+        except Exception:
+            pass
+        check_baidu_blocked_or_raise(page)
+
+        kw = find_page_ele(page, ["#kw", "css:#kw", "xpath://input[@id='kw']", "xpath://input[@name='wd']"], timeout=4)
+        if kw:
+            safe_call(kw, "click")
+            safe_call(kw, "clear")
+            if not safe_call(kw, "input", query):
+                set_baidu_keyword_by_js(page, query)
+        else:
+            set_baidu_keyword_by_js(page, query)
+
+        # 给输入框一点点反应时间，降低百度首页脚本未完成初始化导致的空搜概率。
+        time.sleep(random.uniform(0.3, 0.9))
+
+        btn = find_page_ele(page, ["#su", "css:#su", "xpath://input[@id='su']", "xpath://input[@type='submit']"],
+                            timeout=3)
+        if btn:
+            if not safe_call(btn, "click"):
+                click_baidu_search_by_js(page)
+        else:
+            click_baidu_search_by_js(page)
+
+        wait_baidu_result_page(page, timeout=timeout, after_load_sleep=after_load_sleep)
+        return True
+    except SearchBlockedError:
+        raise
+    except Exception as e:
+        logging.warning("打开百度首页输入并点击查询失败 query=%s err=%s", query, e)
+        return False
+
+
+def open_baidu_search_page(page: ChromiumPage, query: str, count: int, timeout: int, page_no: int,
+                           after_load_sleep: float) -> bool:
+    try:
+        if page_no == 1:
+            return open_baidu_home_and_submit(page, query=query, timeout=timeout, after_load_sleep=after_load_sleep)
+
+        # 翻页仍使用 pn 参数，避免自动点击“下一页”在 GitHub Actions/Xvfb 中不稳定。
+        url = build_baidu_search_url(query=query, count=count, page_no=page_no)
+        logging.debug("DrissionPage Baidu URL page=%s: %s", page_no, url)
         page.get(url, timeout=timeout)
         time.sleep(after_load_sleep)
         try:
             page.run_js(STEALTH_JS)
         except Exception:
             pass
-
-        html_text = get_page_html(page)
-        cur_url = current_page_url(page)
-        if is_baidu_blocked_html(html_text, cur_url):
-            save_blocked_artifacts(page, html_text, reason="baidu_verify")
-            raise SearchBlockedError(f"百度触发验证/风控页面：{cur_url}")
+        check_baidu_blocked_or_raise(page)
         return True
     except SearchBlockedError:
         raise
@@ -1099,9 +1294,10 @@ def search_with_drission_baidu(
 ) -> List[SearchHit]:
     """
     百度多页搜索：
-    1. 不点击下一页，直接使用 pn 参数，GitHub Actions 更稳定；
-    2. 每页检测验证页；
-    3. 默认依赖百度结果容器 mu 属性获取真实 URL；必要时可加 --resolve-baidu-redirects。
+    1. 第 1 页先打开百度首页，再输入关键词并点击查询；
+    2. 第 2 页及以后直接使用 pn 参数翻页，GitHub Actions 更稳定；
+    3. 每页检测验证页；
+    4. 默认依赖百度结果容器 mu 属性获取真实 URL；必要时可加 --resolve-baidu-redirects。
     """
     hits: List[SearchHit] = []
     max_pages = max(1, int(max_pages or 1))
@@ -1260,6 +1456,7 @@ def upsert_item(items: List[CardItem], new_item: CardItem) -> Tuple[List[CardIte
 
 
 def build_output_data(items: List[CardItem], years: int = 2) -> dict:
+    all_categories = sorted(set(CATEGORY_LABEL.keys()) | {item.category for item in items})
     return {
         "generated_at": now_iso(),
         "total": len(items),
@@ -1270,19 +1467,19 @@ def build_output_data(items: List[CardItem], years: int = 2) -> dict:
             "allow_undated_default": False,
         },
         "query_scope": {
-            "mode": "baidu_fixed_site_keyword_plus_global_shandong",
-            "site_keywords": [kw for kw, _ in SITE_QUERY_KEYWORDS],
-            "global_queries": [q for q, _ in GLOBAL_QUERIES],
-            "query_example": "site:sdb.nea.gov.cn 光伏政策",
+            "mode": "baidu_home_site_domain_keyword_click_search_simple_query_config",
+            "query_config_categories": CATEGORY_LABEL,
+            "keyword_queries": [q for q, _ in KEYWORD_QUERIES],
+            "query_example": "site:nyj.shandong.gov.cn 山东 光伏 分布式光伏 工商业光伏 政策 通知 补贴 并网",
+            "site_query_removed": False,
             "websites": PV_SEARCH_CONFIG["official_websites"],
-            "query_count": len(PV_SEARCH_CONFIG["official_websites"]) * len(SITE_QUERY_KEYWORDS) + len(GLOBAL_QUERIES),
+            "query_count": len(PV_SEARCH_CONFIG["official_websites"]) * len(KEYWORD_QUERIES),
             "provider": "baidu",
             "path_positive_rules_removed": True,
         },
         "category_stats": {
-            "policy": sum(1 for item in items if item.category == "policy"),
-            "market": sum(1 for item in items if item.category == "market"),
-            "project": sum(1 for item in items if item.category == "project"),
+            cat: sum(1 for item in items if item.category == cat)
+            for cat in all_categories
         },
         "items": [asdict(item) for item in items],
     }
@@ -1322,36 +1519,64 @@ def save_items_snapshot(items: List[CardItem], output: Path, meta_output: Path, 
 # =========================================================
 
 def build_queries(args: argparse.Namespace) -> List[SearchPlan]:
+    """
+    查询计划生成规则：
+
+    默认模式：
+        每个配置地址 × 每个类目查询词
+        百度输入示例：site:nyj.shandong.gov.cn 山东 光伏 分布式光伏 工商业光伏 政策 通知 补贴 并网
+
+    keyword-only 模式：
+        只使用 QUERY_CONFIG 里的查询词，不拼接 site:
+        运行时加：--keyword-only
+    """
     plans: List[SearchPlan] = []
 
-    for source, homepage in PV_SEARCH_CONFIG["official_websites"].items():
-        domain = host_of(homepage)
-        if not domain:
-            continue
+    if args.keyword_only:
+        # 兼容旧版 V38：地址只做结果过滤，不参与百度搜索。
+        for query, category in KEYWORD_QUERIES:
+            query = clean_text(query)
+            if not query:
+                continue
+            if category not in CATEGORY_LABEL:
+                logging.warning("关键词 query=%s 配置了未登记分类 category=%s，请检查 CATEGORY_LABEL", query, category)
 
-        for keyword, category in SITE_QUERY_KEYWORDS:
             plans.append(
                 SearchPlan(
-                    query=f"site:{domain} {keyword}",
-                    source=source,
-                    site_domain=domain,
+                    query=query,
+                    source="百度关键词检索",
+                    site_domain="",
                     category=category,
-                    strict_site=True,
-                    keyword=keyword,
+                    strict_site=False,
+                    keyword=query,
                 )
             )
+    else:
+        # 新版默认：地址参与查询。每个数据源域名都会和每个查询词组合成 site: 查询。
+        for source, homepage in PV_SEARCH_CONFIG["official_websites"].items():
+            domain = host_of(homepage)
+            if not domain:
+                logging.warning("数据源地址无法提取域名，已跳过：source=%s homepage=%s", source, homepage)
+                continue
 
-    for query, category in GLOBAL_QUERIES:
-        plans.append(
-            SearchPlan(
-                query=query,
-                source="全局山东省检索",
-                site_domain="",
-                category=category,
-                strict_site=False,
-                keyword=query,
-            )
-        )
+            for query, category in KEYWORD_QUERIES:
+                query = clean_text(query)
+                if not query:
+                    continue
+                if category not in CATEGORY_LABEL:
+                    logging.warning("关键词 query=%s 配置了未登记分类 category=%s，请检查 CATEGORY_LABEL", query, category)
+
+                site_query = f"site:{domain} {query}"
+                plans.append(
+                    SearchPlan(
+                        query=site_query,
+                        source=source,
+                        site_domain=domain,
+                        category=category,
+                        strict_site=True,
+                        keyword=query,
+                    )
+                )
 
     seen = set()
     unique: List[SearchPlan] = []
@@ -1365,11 +1590,21 @@ def build_queries(args: argparse.Namespace) -> List[SearchPlan]:
     if args.shuffle_queries:
         random.shuffle(unique)
 
-    logging.info(
-        "生成查询计划总数：%d；百度查询格式：site:域名 光伏政策 / site:域名 光伏市场分析 / site:域名 光伏项目；全局查询：%s",
-        len(unique),
-        "；".join(q for q, _ in GLOBAL_QUERIES),
-    )
+    if args.keyword_only:
+        logging.info(
+            "生成查询计划总数：%d；查询方式：关键词查询，不拼接 site:；关键词：%s",
+            len(unique),
+            "；".join(q for q, _ in KEYWORD_QUERIES),
+        )
+    else:
+        logging.info(
+            "生成查询计划总数：%d；查询方式：每个配置地址 × 每个关键词，输入百度格式：site:域名 关键词；数据源数=%d；关键词数=%d；示例：%s",
+            len(unique),
+            len(PV_SEARCH_CONFIG["official_websites"]),
+            len(KEYWORD_QUERIES),
+            unique[0].query if unique else "",
+        )
+
     return unique
 
 
@@ -1428,11 +1663,13 @@ def collect_items(args: argparse.Namespace) -> List[CardItem]:
 
     if args.overwrite:
         live_items: List[CardItem] = []
-        live_items = save_items_snapshot(live_items, output_path, meta_output_path, args.max_total_items, years=args.years)
+        live_items = save_items_snapshot(live_items, output_path, meta_output_path, args.max_total_items,
+                                         years=args.years)
         logging.info("覆盖模式：已初始化 ./data/shandong_pv_data.json，后续符合条件的数据会实时写入")
     else:
         live_items = load_existing_items(output_path)
-        live_items = save_items_snapshot(live_items, output_path, meta_output_path, args.max_total_items, years=args.years)
+        live_items = save_items_snapshot(live_items, output_path, meta_output_path, args.max_total_items,
+                                         years=args.years)
         logging.info("追加模式：旧数据已载入，后续符合条件的数据会实时追加写入")
 
     plans = build_queries(args)
@@ -1632,7 +1869,7 @@ def collect_items(args: argparse.Namespace) -> List[CardItem]:
 # =========================================================
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="山东光伏情报站 - DrissionPage + 百度检索版 V36")
+    parser = argparse.ArgumentParser(description="山东光伏情报站 - DrissionPage + 百度地址+关键词检索版 V39")
 
     parser.add_argument("--out", default=str(DEFAULT_OUTPUT), help="输出 JSON 文件路径")
     parser.add_argument("--meta-out", default=str(DEFAULT_META_OUTPUT), help="输出 meta JSON 文件路径")
@@ -1640,7 +1877,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-total-items", type=int, default=0, help="最多保留多少条，0 表示不限制")
     parser.add_argument("--overwrite", action="store_true", help="覆盖模式：清空旧数据后重跑")
 
-    parser.add_argument("--limit-queries", type=int, default=0, help="限制 query 数量，0 表示不限制")
+    parser.add_argument("--limit-queries", type=int, default=5, help="限制 query 数量，0 表示不限制")
     parser.add_argument("--max-results-per-query", type=int, default=10, help="每页读取结果数，建议 10")
     parser.add_argument("--max-pages-per-query", type=int, default=1, help="每个 query 最多翻页数；百度建议 1")
     parser.add_argument("--timeout", type=int, default=35, help="页面加载超时时间秒")
@@ -1649,22 +1886,29 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--page-sleep-min", type=float, default=3.0, help="同一 query 翻页最小停顿秒数")
     parser.add_argument("--page-sleep-max", type=float, default=8.0, help="同一 query 翻页最大停顿秒数")
     parser.add_argument("--after-load-sleep", type=float, default=3.0, help="页面加载后等待秒数")
-    parser.add_argument("--restart-browser-every", type=int, default=3, help="每查询 N 个 query 后重启浏览器；0 表示不重启，默认 3")
+    parser.add_argument("--restart-browser-every", type=int, default=3,
+                        help="每查询 N 个 query 后重启浏览器；0 表示不重启，默认 3")
     parser.add_argument("--restart-sleep", type=float, default=60.0, help="重启浏览器后暂停秒数，默认 60")
 
     parser.add_argument("--allow-undated", action="store_true", help="允许没有发布日期/日期线索的结果入库；默认不允许")
     parser.add_argument("--allow-noisy-domains", action="store_true", help="允许噪声域名入候选，不建议开启")
+    parser.add_argument("--allow-outside-domains", dest="only_configured_domains", action="store_false",
+                        help="放开配置数据源域名限制，允许其它域名结果入库；默认只保留 PV_SEARCH_CONFIG 中的数据源")
+    parser.set_defaults(only_configured_domains=True)
+    parser.add_argument("--keyword-only", action="store_true", help="只按 QUERY_CONFIG 关键词查询，不拼接 site:域名；地址仅用于结果过滤")
     parser.add_argument("--loose", action="store_true", help="放宽相关性分数阈值")
     parser.add_argument("--min-score", type=int, default=6, help="最小相关性分数，默认 6；结果少可调到 4")
-    parser.add_argument("--category", choices=["policy", "market", "project"], default="", help="只保留某个分类")
+    parser.add_argument("--category", choices=sorted(CATEGORY_LABEL.keys()), default="", help="只保留某个分类")
 
     parser.add_argument("--headless", action="store_true", help="无界面运行；百度容易触发验证，GitHub Actions 不建议开启")
     parser.add_argument("--chrome-path", default=os.environ.get("CHROME_PATH", ""), help="Chrome/Edge 可执行文件路径")
     parser.add_argument("--fresh-profile", action="store_true", help="运行前清空浏览器用户目录")
     parser.add_argument("--shuffle-queries", action="store_true", help="随机打乱查询顺序，降低固定模式")
-    parser.add_argument("--resolve-baidu-redirects", action="store_true", help="当百度结果没有 mu 真实地址时，尝试 requests 解析跳转")
+    parser.add_argument("--resolve-baidu-redirects", action="store_true",
+                        help="当百度结果没有 mu 真实地址时，尝试 requests 解析跳转")
     parser.add_argument("--stop-on-verify", action="store_true", default=True, help="检测到百度验证时停止任务，默认开启")
-    parser.add_argument("--no-stop-on-verify", dest="stop_on_verify", action="store_false", help="检测到百度验证后跳过当前 query 继续，不推荐")
+    parser.add_argument("--no-stop-on-verify", dest="stop_on_verify", action="store_false",
+                        help="检测到百度验证后跳过当前 query 继续，不推荐")
 
     parser.add_argument("--no-detail-logs", action="store_true", help="不写 raw_results.jsonl 和 reject_results.jsonl")
     parser.add_argument("--no-file-log", action="store_true", help="不写 logs/crawler.log")
