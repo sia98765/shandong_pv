@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-28T05:14:38+08:00",
-  "total": 199,
+  "generated_at": "2026-05-28T18:51:50+08:00",
+  "total": 200,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
@@ -58,7 +58,7 @@
     "market": 23,
     "policy": 44,
     "project": 117,
-    "source_grid_load_storage": 15
+    "source_grid_load_storage": 16
   },
   "items": [
     {
@@ -2060,6 +2060,22 @@
       "relevance_score": 29,
       "matched_query": "site:nyj.shandong.gov.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
       "time_hint": "publish_date:2025-05-15"
+    },
+    {
+      "id": "b92bcc5f955a8aa6",
+      "title": "【新华社】我国首个“风光火 储一体化 ”外送特高压工程投产",
+      "content": "【新华社】我国首个“风光火 储一体化 ”外送特高压工程投产 2025年5月4日 国家电网5月8日在济南、兰州同时宣布,陇东— 山东 ±800千伏特高压直流工程竣工投产,标志着我国首个“风光火 储一体化 ”大型综合能源基地外送工程建成投运。这条特高压输送的电能超一半是风能、光伏、 储能 等纯绿色电能。 陇东—山东工程是我国又一条“西电东送”能源大动脉,起于甘肃庆阳,止于山东泰安,采用±800千伏额定... 国家电网有限公司STATE  播报  暂停 2025年5月4日 国家电网5月8日在济南、兰州同时宣布,陇东— 山东 ±800千伏特高压直流工程竣工投产,标志着我国首个“风光火 储一体化 ”大型综合能源基地外送工程建成投运。这条特高压输送的电能超一半是风能、光伏、 储能 等纯绿色电能。 陇东—山东工程是我国又...",
+      "category": "source_grid_load_storage",
+      "category_label": "源网荷储",
+      "source": "国家电网",
+      "publish_date": "2025-05-04",
+      "homepage_url": "https://www.sgcc.com.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E3%80%90%E6%96%B0%E5%8D%8E%E7%A4%BE%E3%80%91%E6%88%91%E5%9B%BD%E9%A6%96%E4%B8%AA%E2%80%9C%E9%A3%8E%E5%85%89%E7%81%AB+%E5%82%A8%E4%B8%80%E4%BD%93%E5%8C%96+%E2%80%9D%E5%A4%96%E9%80%81%E7%89%B9%E9%AB%98%E5%8E%8B%E5%B7%A5%E7%A8%8B%E6%8A%95%E4%BA%A7",
+      "original_url": "http://www.nc.sgcc.com.cn/zxzx/mtjj/2025/05/470980.shtml",
+      "collected_at": "2026-05-28T16:44:54+08:00",
+      "relevance_score": 23,
+      "matched_query": "site:sgcc.com.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
+      "time_hint": "publish_date:2025-05-04"
     },
     {
       "id": "cfff3d54004ae81b",
