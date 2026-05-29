@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-05-29T18:47:39+08:00",
-  "total": 205,
+  "generated_at": "2026-05-30T05:22:50+08:00",
+  "total": 208,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-05-28",
+    "cutoff_date": "2024-05-29",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -55,9 +55,9 @@
     "path_positive_rules_removed": true
   },
   "category_stats": {
-    "market": 23,
+    "market": 24,
     "policy": 45,
-    "project": 117,
+    "project": 119,
     "source_grid_load_storage": 20
   },
   "items": [
@@ -539,6 +539,22 @@
       "collected_at": "2026-05-21T16:34:20+08:00",
       "relevance_score": 37,
       "matched_query": "site:nyj.shandong.gov.cn 山东 光伏 分布式光伏 工商业光伏 政策 通知 补贴 并网",
+      "time_hint": "publish_date:2026-03-27"
+    },
+    {
+      "id": "05e54f5a73b2c093",
+      "title": "...经济开发区新能源应用基础设施建设示范 项目 ( EPC ) 中标 候选人 公示",
+      "content": "...经济开发区新能源应用基础设施建设示范 项目 ( EPC ) 中标 候选人 公示 2026年3月27日 一、项目名称:枣庄经济开发区新能源应用基础设施建设示范项目( EPC ) 二、标段编号:3704022603060001001001 三、 招标 人:枣庄中志能源科技有限公司 四、招标代理机构:枣庄市市中区建筑设计院 五、评委评分汇总表 单位名称 评委1 评委2 评委3 评委4 评委5 技术标得分 资信标得分 报价得分 最终得分 联合体牵头人: 山东 ... 枣庄市公共资源交易网 2026年3月27日 一、项目名称:枣庄经济开发区新能源应用基础设施建设示范项目( EPC ) 二、标段编号:3704022603060001001001 三、 招标 人:枣庄中志能源科技有限公司 四、招标代理机构:枣庄市市中区...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "枣庄公共资源交易中心",
+      "publish_date": "2026-03-27",
+      "homepage_url": "http://ggzy.zaozhuang.gov.cn/",
+      "baidu_search_url": "https://www.baidu.com/s?wd=...%E7%BB%8F%E6%B5%8E%E5%BC%80%E5%8F%91%E5%8C%BA%E6%96%B0%E8%83%BD%E6%BA%90%E5%BA%94%E7%94%A8%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%BB%BA%E8%AE%BE%E7%A4%BA%E8%8C%83+%E9%A1%B9%E7%9B%AE+%28+EPC+%29+%E4%B8%AD%E6%A0%87+%E5%80%99%E9%80%89%E4%BA%BA+%E5%85%AC%E7%A4%BA",
+      "original_url": "http://ggzy.zaozhuang.gov.cn/szq/jyxx/018009/018009003/20260327/2784dfd5-5a62-4223-824a-6be49768c6be.html",
+      "collected_at": "2026-05-30T04:04:43+08:00",
+      "relevance_score": 26,
+      "matched_query": "site:ggzy.zaozhuang.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
       "time_hint": "publish_date:2026-03-27"
     },
     {
@@ -1966,6 +1982,22 @@
       "time_hint": "publish_date:2025-06-03"
     },
     {
+      "id": "d8c0996cf84468e0",
+      "title": "山东省 能源局 动态要闻 【大众日报】一场绿色变革正重塑发展基因",
+      "content": "山东省 能源局 动态要闻 【大众日报】一场绿色变革正重塑发展基因 2025年6月3日 “十四五”以来年均增速25%,这是 山东 新能源装机的发展速度。随着去年山东新能源和可再生能源装机先后完成突破1亿千瓦和超过煤电装机“两件大事”,新能源正加速重塑山东的能源版图。截至5月中旬,全省新能源和可再生能源装机达1.25亿千瓦,占比超过51%。其中 光伏装机 8514万千瓦,居全国首位;风电装机2669万千瓦,居全国第五... 山东省能源局  播报  暂停 2025年6月3日 “十四五”以来年均增速25%,这是 山东 新能源装机的发展速度。随着去年山东新能源和可再生能源装机先后完成突破1亿千瓦和超过煤电装机“两件大事”,新能源正加速重塑山东的能源版图。截至5月中旬,全省新能源和可再生能源装机达1.25亿千瓦,占比超...",
+      "category": "market",
+      "category_label": "市场分析",
+      "source": "山东省能源局",
+      "publish_date": "2025-06-03",
+      "homepage_url": "http://nyj.shandong.gov.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C%E7%9C%81+%E8%83%BD%E6%BA%90%E5%B1%80+%E5%8A%A8%E6%80%81%E8%A6%81%E9%97%BB+%E3%80%90%E5%A4%A7%E4%BC%97%E6%97%A5%E6%8A%A5%E3%80%91%E4%B8%80%E5%9C%BA%E7%BB%BF%E8%89%B2%E5%8F%98%E9%9D%A9%E6%AD%A3%E9%87%8D%E5%A1%91%E5%8F%91%E5%B1%95%E5%9F%BA%E5%9B%A0",
+      "original_url": "http://nyj.shandong.gov.cn/art/2025/6/3/art_59966_10308896.html",
+      "collected_at": "2026-05-30T02:57:25+08:00",
+      "relevance_score": 27,
+      "matched_query": "site:nyj.shandong.gov.cn 山东 光伏 市场 装机 发电量 电价 消纳 数据 分析",
+      "time_hint": "publish_date:2025-06-03"
+    },
+    {
       "id": "f4e8cae898b9f31e",
       "title": "资格预审公示 - 临沂市公共资源交易中心",
       "content": "资格预审公示 - 临沂市公共资源交易中心 2025年6月3日 二标段:国华金泰 光伏 新材料场地平整项目一期材料项目资格预审结果 2023-05-06 一标段:场平工程资格预审结果 2023-05-06 兰陵县第二实验中学新建项目资格预审结果 2022-04-08 山里王乡村振兴示范片区项目资格预审结果 2021-03-22 山里王乡村振兴示范片区项目资格预审结果 2021-03-02 济钢鲍德气体有限公司制氧机配套... 临沂市公共资源交易中心 2025年6月3日 二标段:国华金泰 光伏 新材料场地平整项目一期材料项目资格预审结果 2023-05-06 一标段:场平工程资格预审结果 2023-05-06 兰陵县第二实验中学新建项目资格预审结果 2022-04-08 山里王乡村振兴示范片区项目资格预审结果 20...",
@@ -2620,6 +2652,22 @@
       "relevance_score": 21,
       "matched_query": "site:taggzyjy.com.cn 光伏项目",
       "time_hint": "publish_date:2024-12-26"
+    },
+    {
+      "id": "57a35f3c252f7045",
+      "title": "ggzy.qingdao.gov.cn/PortalQDManage/ShareResources/Corp...",
+      "content": "ggzy.qingdao.gov.cn/PortalQDManage/ShareResources/Corp... 2024年12月20日 项目编号 项目名称 项目所属地 交易分类 中标 (成交)金额(元) 完成时间 是否使用 查看详情 / 浙江衢州华友钴业三期10mw 分布式光伏 发电项目施工总承包 浙江省衢州市江山市 工程类 20488493.230000 2024/12/20 查看 / 衢州市衢江区高家镇72mwp农光互补光伏发电项目总承包 epc 浙江省衢州... 青岛市公共资源交易电子服务系统 2024年12月20日 项目编号 项目名称 项目所属地 交易分类 中标 (成交)金额(元) 完成时间 是否使用 查看详情 / 浙江衢州华友钴业三期10mw 分布式光伏 发电项目施工总承包 浙江省衢州市江山市 工...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "青岛公共资源交易中心",
+      "publish_date": "2024-12-20",
+      "homepage_url": "https://ggzy.qingdao.gov.cn/PortalQDManage/",
+      "baidu_search_url": "https://www.baidu.com/s?wd=ggzy.qingdao.gov.cn%2FPortalQDManage%2FShareResources%2FCorp...",
+      "original_url": "https://ggzy.qingdao.gov.cn/PortalQDManage/ShareResources/CorpAchievement?corpGuid=2aa1395b-22b9-4ea8-9ad9-ecbb5a154a2c&corpCode=91331102MA2E1W4605",
+      "collected_at": "2026-05-30T03:52:31+08:00",
+      "relevance_score": 23,
+      "matched_query": "site:ggzy.qingdao.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
+      "time_hint": "publish_date:2024-12-20"
     },
     {
       "id": "32e3f252c72fa7b5",
