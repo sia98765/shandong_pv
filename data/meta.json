@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-02T19:26:41+08:00",
-  "total": 216,
+  "generated_at": "2026-06-03T06:33:09+08:00",
+  "total": 218,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-06-01",
+    "cutoff_date": "2024-06-02",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -55,9 +55,9 @@
     "path_positive_rules_removed": true
   },
   "category_stats": {
-    "market": 30,
-    "policy": 44,
+    "market": 31,
+    "policy": 43,
     "project": 120,
-    "source_grid_load_storage": 22
+    "source_grid_load_storage": 24
   }
 }
