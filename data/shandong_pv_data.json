@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-02T07:06:24+08:00",
-  "total": 215,
+  "generated_at": "2026-06-02T19:26:41+08:00",
+  "total": 216,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
@@ -58,7 +58,7 @@
     "market": 30,
     "policy": 44,
     "project": 120,
-    "source_grid_load_storage": 21
+    "source_grid_load_storage": 22
   },
   "items": [
     {
@@ -1580,6 +1580,22 @@
       "relevance_score": 21,
       "matched_query": "site:hzsjyzx.cn 光伏项目",
       "time_hint": "publish_date:2025-09-29"
+    },
+    {
+      "id": "47b3d311fb264439",
+      "title": "山东能源 监管办加强 新能源 和新型并网主体涉网安全监管 筑牢涉网...",
+      "content": "山东能源 监管办加强 新能源 和新型并网主体涉网安全监管 筑牢涉网... 2025年9月28日 一是明确涉网安全工作范围及性能要求。将集中式风电、光伏、分布式能源、新型 储能 、 虚拟电厂 等全部纳入统一管理范畴,系统规范涉网设备类型、试验项目和技术标准。 二是强化并网接入管理。指导电网企业做好并网前审核工作,确保设备符合并网前条件。督促电网企业研究分布式 新能源 接入安全风险,加强接入电网安全风险评估,坚持统一... 国家能源局山东监管办公室  播报  暂停 2025年9月28日 一是明确涉网安全工作范围及性能要求。将集中式风电、光伏、分布式能源、新型 储能 、 虚拟电厂 等全部纳入统一管理范畴,系统规范涉网设备类型、试验项目和技术标准。 二是强化并网接入管理。指导电网企业做好并网前审核工作,确保设备符合...",
+      "category": "source_grid_load_storage",
+      "category_label": "源网荷储",
+      "source": "山东能源监管办",
+      "publish_date": "2025-09-28",
+      "homepage_url": "https://sdb.nea.gov.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C%E8%83%BD%E6%BA%90+%E7%9B%91%E7%AE%A1%E5%8A%9E%E5%8A%A0%E5%BC%BA+%E6%96%B0%E8%83%BD%E6%BA%90+%E5%92%8C%E6%96%B0%E5%9E%8B%E5%B9%B6%E7%BD%91%E4%B8%BB%E4%BD%93%E6%B6%89%E7%BD%91%E5%AE%89%E5%85%A8%E7%9B%91%E7%AE%A1+%E7%AD%91%E7%89%A2%E6%B6%89%E7%BD%91...",
+      "original_url": "https://sdb.nea.gov.cn/dtyw/jgdt/202509/t20250928_288124.html",
+      "collected_at": "2026-06-02T16:57:36+08:00",
+      "relevance_score": 34,
+      "matched_query": "site:sdb.nea.gov.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
+      "time_hint": "publish_date:2025-09-28"
     },
     {
       "id": "bb09a80af60df679",
