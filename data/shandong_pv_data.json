@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-04T19:07:44+08:00",
-  "total": 218,
+  "generated_at": "2026-06-05T05:10:00+08:00",
+  "total": 221,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-06-03",
+    "cutoff_date": "2024-06-04",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -57,8 +57,8 @@
   "category_stats": {
     "market": 31,
     "policy": 43,
-    "project": 120,
-    "source_grid_load_storage": 24
+    "project": 122,
+    "source_grid_load_storage": 25
   },
   "items": [
     {
@@ -1534,6 +1534,22 @@
       "time_hint": "publish_date:2025-10-04"
     },
     {
+      "id": "2315b82bcde39b81",
+      "title": "东昌府区绿色低碳智慧综合能源利用示范 项目 监理 中标 候选人 公示",
+      "content": "东昌府区绿色低碳智慧综合能源利用示范 项目 监理 中标 候选人 公示 招标 文件领取时间 2025年9月30日00:00时至2025年10月13日23时59分 开标时间 2025年10月23日09时00分 开标地点 聊城市公共资源交易中心网上不见面开标大厅 中标候选人响应文件的资格能力 山东德之信项目管理有限公司 单位资质条件 电力工程监理乙级 项目班... 聊城市公共资源交易中心 招标 文件领取时间 2025年9月30日00:00时至2025年10月13日23时59分 开标时间 2025年10月23日09时00分 开标地点 聊城市公共资源交易中心网上不见面开标大厅 中标候选人响应文件的资格能力 山东德之信项目管理有限公司 单位资质条件 电力工程监理乙级 项目班...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "聊城公共资源交易中心",
+      "publish_date": "2025-09-30",
+      "homepage_url": "http://ggzyjy.liaocheng.gov.cn/",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E4%B8%9C%E6%98%8C%E5%BA%9C%E5%8C%BA%E7%BB%BF%E8%89%B2%E4%BD%8E%E7%A2%B3%E6%99%BA%E6%85%A7%E7%BB%BC%E5%90%88%E8%83%BD%E6%BA%90%E5%88%A9%E7%94%A8%E7%A4%BA%E8%8C%83+%E9%A1%B9%E7%9B%AE+%E7%9B%91%E7%90%86+%E4%B8%AD%E6%A0%87+%E5%80%99%E9%80%89%E4%BA%BA+%E5%85%AC%E7%A4%BA",
+      "original_url": "http://ggzyjy.liaocheng.gov.cn/lcggzy/trade_detailmsg.html?infoid=f7d886ef-7f96-4a1c-bfc9-80e654b953ce&releationguid=f94fa5f2-7405-4ed1-ad33-86d8313d2dbe&categorynum=003001001003002",
+      "collected_at": "2026-06-05T04:55:49+08:00",
+      "relevance_score": 30,
+      "matched_query": "site:ggzyjy.liaocheng.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
+      "time_hint": "publish_date:2025-09-30"
+    },
+    {
       "id": "1da272931b24d4d4",
       "title": "...枣庄高新区光储充一体化智慧能源生态圈 项目 (一期) 中标 候选人 公示",
       "content": "...枣庄高新区光储充一体化智慧能源生态圈 项目 (一期) 中标 候选人 公示 2025年9月30日 中标 候选人公示 一、项目编号:YCGKZB202509081166998866 二、项目名称:枣庄高新区光储充一体化智慧能源生态圈项目(一期) 三、 招标 单位:枣庄绿智新能源有限公司 四、招标代理单位: 山东 禹宸项目管理咨询有限公司 五、评委评分汇总表 序号单位名称技术标商务标资信标合计排名评委 1评委 2评委 3评委 4评委 5技术得分报... 枣庄市公共资源交易网  播报  暂停 2025年9月30日 中标 候选人公示 一、项目编号:YCGKZB202509081166998866 二、项目名称:枣庄高新区光储充一体化智慧能源生态圈项目(一期) 三、 招标 单位:枣庄绿智新能源有限公司 四、招标代...",
@@ -1772,6 +1788,22 @@
       "relevance_score": 21,
       "matched_query": "site:ggzyjy.rizhao.gov.cn 光伏项目",
       "time_hint": "publish_date:2025-08-15"
+    },
+    {
+      "id": "7f0b77d504a70749",
+      "title": "枣庄市公共资源交易网-枣庄高新区光 储 充 一体化 智慧 能源 生态圈项目...",
+      "content": "枣庄市公共资源交易网-枣庄高新区光 储 充 一体化 智慧 能源 生态圈项目... 2025年8月8日 枣庄高新区光储充 一体化 智慧能源生态圈项目(一期)监理服务招标计划公示 项目名称招标人名称项目概况招标内容估算投资 (万元)预计招标公告 发布时间枣庄高新区光储充一体化智慧能源生态圈项目 (一期)监理服务枣庄绿智 新能源 有限公司建设地点位于枣庄市高新区,拟于 20处园区、厂房、屋顶及停车场建设屋顶光伏、光伏雨棚,... 枣庄市公共资源交易网  播报  暂停 2025年8月8日 枣庄高新区光储充 一体化 智慧能源生态圈项目(一期)监理服务招标计划公示 项目名称招标人名称项目概况招标内容估算投资 (万元)预计招标公告 发布时间枣庄高新区光储充一体化智慧能源生态圈项目 (一期)监理服务枣庄绿智 新能源 有限公...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "枣庄公共资源交易中心",
+      "publish_date": "2025-08-08",
+      "homepage_url": "http://ggzy.zaozhuang.gov.cn/",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E6%9E%A3%E5%BA%84%E5%B8%82%E5%85%AC%E5%85%B1%E8%B5%84%E6%BA%90%E4%BA%A4%E6%98%93%E7%BD%91-%E6%9E%A3%E5%BA%84%E9%AB%98%E6%96%B0%E5%8C%BA%E5%85%89+%E5%82%A8+%E5%85%85+%E4%B8%80%E4%BD%93%E5%8C%96+%E6%99%BA%E6%85%A7+%E8%83%BD%E6%BA%90+%E7%94%9F%E6%80%81%E5%9C%88%E9%A1%B9%E7%9B%AE...",
+      "original_url": "http://ggzy.zaozhuang.gov.cn/jyxx/018009/018009007/20250808/a4633a17-c906-4907-981d-91c60602562b.html",
+      "collected_at": "2026-06-05T03:54:05+08:00",
+      "relevance_score": 28,
+      "matched_query": "site:ggzy.zaozhuang.gov.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
+      "time_hint": "publish_date:2025-08-08"
     },
     {
       "id": "fcfa1270cafc12be",
@@ -2714,6 +2746,22 @@
       "original_url": "http://nyj.shandong.gov.cn/art/2025/1/10/art_59966_10307357.html",
       "collected_at": "2026-05-21T16:39:41+08:00",
       "relevance_score": 30,
+      "matched_query": "site:nyj.shandong.gov.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
+      "time_hint": "publish_date:2025-01-10"
+    },
+    {
+      "id": "83cfc09db6b777e2",
+      "title": "山东省能源 局 新闻发布 权威发布|逐“绿”向“新”,山东出台新政...",
+      "content": "山东省能源 局 新闻发布 权威发布|逐“绿”向“新”,山东出台新政... 2025年1月10日 为满足企业绿电需求、促进 新能源 就近就地消纳,《若干措施》创新提出采用新能源就近直供、绿电交易、新能源自发自用等模式,因地制宜建设 源网荷储一体化 ;支持依托大型清洁能源基地,探索建设“风光氢氨醇”项目;支持以 虚拟电厂 形式,聚合分布式电源、可控负荷、 储能 等各类分散资源,高质量常态化参与电力系统调节。 山东省能源局  播报  暂停 2025年1月10日 为满足企业绿电需求、促进 新能源 就近就地消纳,《若干措施》创新提出采用新能源就近直供、绿电交易、新能源自发自用等模式,因地制宜建设 源网荷储一体化 ;支持依托大型清洁能源基地,探索建设“风光氢氨醇”项目;支持以 虚拟电厂 形式,聚合分布式电源、可控负荷、...",
+      "category": "source_grid_load_storage",
+      "category_label": "源网荷储",
+      "source": "山东省能源局",
+      "publish_date": "2025-01-10",
+      "homepage_url": "http://nyj.shandong.gov.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C%E7%9C%81%E8%83%BD%E6%BA%90+%E5%B1%80+%E6%96%B0%E9%97%BB%E5%8F%91%E5%B8%83+%E6%9D%83%E5%A8%81%E5%8F%91%E5%B8%83%7C%E9%80%90%E2%80%9C%E7%BB%BF%E2%80%9D%E5%90%91%E2%80%9C%E6%96%B0%E2%80%9D%2C%E5%B1%B1%E4%B8%9C%E5%87%BA%E5%8F%B0%E6%96%B0%E6%94%BF...",
+      "original_url": "http://nyj.shandong.gov.cn/art/2025/1/10/art_59976_10307333.html",
+      "collected_at": "2026-06-05T02:48:22+08:00",
+      "relevance_score": 29,
       "matched_query": "site:nyj.shandong.gov.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
       "time_hint": "publish_date:2025-01-10"
     },
