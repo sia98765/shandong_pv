@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-05T18:57:05+08:00",
-  "total": 222,
+  "generated_at": "2026-06-06T04:47:31+08:00",
+  "total": 223,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-06-04",
+    "cutoff_date": "2024-06-05",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -56,7 +56,7 @@
   },
   "category_stats": {
     "market": 31,
-    "policy": 44,
+    "policy": 45,
     "project": 122,
     "source_grid_load_storage": 25
   },
@@ -1068,6 +1068,22 @@
       "relevance_score": 35,
       "matched_query": "site:sdb.nea.gov.cn 山东 光伏 分布式光伏 工商业光伏 政策 通知 补贴 并网",
       "time_hint": "publish_date:2025-12-18"
+    },
+    {
+      "id": "15b1954597e0875f",
+      "title": "山东 电力市场规则 (试行)",
+      "content": "【PDF】 山东 电力市场规则 (试行) 文件格式：PDF/Adobe Acrobat - HTML版 2025年12月17日 发电企业, 分布式 电源,电动汽车充电设 施用电单独注册为电力用户,可选择以零售用户,批发用户 或电网企业代理 工商业 用户身份参与市场.智能微电网用电 可选择以零售用户或批发用户身份参与市场. 第 2.3.24 条 电力用户,分布式电源,分布式储能,电 动汽车充电设施进行市场注册时,可在 山东 电力交易平台填 报其在电力营销... 国家能源局山东监管办公室 2025年12月17日 发电企业, 分布式 电源,电动汽车充电设 施用电单独注册为电力用户,可选择以零售用户,批发用户 或电网企业代理 工商业 用户身份参与市场.智能微电网用电 可选择以零售用户或批发用户身份参与市场. 第 2.3...",
+      "category": "policy",
+      "category_label": "光伏政策",
+      "source": "山东能源监管办",
+      "publish_date": "2025-12-17",
+      "homepage_url": "https://sdb.nea.gov.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C+%E7%94%B5%E5%8A%9B%E5%B8%82%E5%9C%BA%E8%A7%84%E5%88%99+%28%E8%AF%95%E8%A1%8C%29",
+      "original_url": "https://sdb.nea.gov.cn/dtyw/tzgg/202512/P020251217677138093680.pdf",
+      "collected_at": "2026-06-06T02:13:21+08:00",
+      "relevance_score": 33,
+      "matched_query": "site:sdb.nea.gov.cn 山东 光伏 分布式光伏 工商业光伏 政策 通知 补贴 并网",
+      "time_hint": "publish_date:2025-12-17"
     },
     {
       "id": "1dd09dde57a8e2d4",
