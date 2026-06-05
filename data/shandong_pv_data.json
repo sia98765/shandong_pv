@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-05T05:10:00+08:00",
-  "total": 221,
+  "generated_at": "2026-06-05T18:57:05+08:00",
+  "total": 222,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
@@ -56,11 +56,27 @@
   },
   "category_stats": {
     "market": 31,
-    "policy": 43,
+    "policy": 44,
     "project": 122,
     "source_grid_load_storage": 25
   },
   "items": [
+    {
+      "id": "bdcecd5b2b523cbe",
+      "title": "山东省 能源局 法规文件 关于印发《关于深入推进山东省“人工智能+...",
+      "content": "山东省 能源局 法规文件 关于印发《关于深入推进山东省“人工智能+... 2天前 集成地形气象、生态环保、项目经济性、 发电量 预测与碳核算等,构建多维度 数据 底座;运用人工智能优化风光电站选址布局、储能配置及电缆路径规划,实现方案快速建模、仿真分析与优化比选,缩短项目设计周期;嵌入生态保护、耕地红线等约束条件智能校验功能,提升设计合规性与精细化水平,助力新能源项目高效落地。 山东省能源局  播报  暂停 2天前 集成地形气象、生态环保、项目经济性、 发电量 预测与碳核算等,构建多维度 数据 底座;运用人工智能优化风光电站选址布局、储能配置及电缆路径规划,实现方案快速建模、仿真分析与优化比选,缩短项目设计周期;嵌入生态保护、耕地红线等约束条件智能校验功能,提升设计合规性与精细化水平,助力新能源项目高效落地...",
+      "category": "policy",
+      "category_label": "光伏政策",
+      "source": "山东省能源局",
+      "publish_date": "2026-06-04",
+      "homepage_url": "http://nyj.shandong.gov.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C%E7%9C%81+%E8%83%BD%E6%BA%90%E5%B1%80+%E6%B3%95%E8%A7%84%E6%96%87%E4%BB%B6+%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E5%85%B3%E4%BA%8E%E6%B7%B1%E5%85%A5%E6%8E%A8%E8%BF%9B%E5%B1%B1%E4%B8%9C%E7%9C%81%E2%80%9C%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%2B...",
+      "original_url": "http://nyj.shandong.gov.cn/art/2026/6/4/art_354539_10312174.html",
+      "collected_at": "2026-06-05T16:31:46+08:00",
+      "relevance_score": 36,
+      "matched_query": "site:nyj.shandong.gov.cn 山东 光伏 市场 装机 发电量 电价 消纳 数据 分析",
+      "time_hint": "publish_date:2026-06-04"
+    },
     {
       "id": "2f6f8663c5fa35d1",
       "title": "山东省能源 局 其他文件 关于印发《促进光伏发电高质量发展的实施...",
