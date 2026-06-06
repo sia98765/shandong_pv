@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-06T18:04:15+08:00",
-  "total": 223,
+  "generated_at": "2026-06-07T04:06:30+08:00",
+  "total": 224,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-06-05",
+    "cutoff_date": "2024-06-06",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -58,9 +58,25 @@
     "market": 31,
     "policy": 45,
     "project": 122,
-    "source_grid_load_storage": 25
+    "source_grid_load_storage": 26
   },
   "items": [
+    {
+      "id": "54d1dd6378dce04e",
+      "title": "全链协同一站智控,综合 能源 擘画新程 | 正泰智慧能源全场景生态亮相SNEC 202...",
+      "content": "全链协同一站智控,综合 能源 擘画新程 | 正泰智慧能源全场景生态亮相SNEC 202... 2天前 在综合能源转型背景下,正泰加速从“硬制造”向“软服务+全球化”双向战略升级,搭建“源-网- 荷 - 储 ” 一体化能源 生态,建立综合能源服务领域的领先优势。 从数智化运维到园区能源管理,从 虚拟电厂 聚合到绿电绿证交易,此次展会,正泰安能充分展示出公司在综合服务领域的专业积累。虚拟电厂聚合交易平台集“发电侧交易、售电... 北极星太阳能光伏网  播报  暂停 2天前 在综合能源转型背景下,正泰加速从“硬制造”向“软服务+全球化”双向战略升级,搭建“源-网- 荷 - 储 ” 一体化能源 生态,建立综合能源服务领域的领先优势。 从数智化运维到园区能源管理,从 虚拟电厂 聚合到绿电绿证交易,此次展会,正泰安能充...",
+      "category": "source_grid_load_storage",
+      "category_label": "源网荷储",
+      "source": "北极星太阳能光伏网",
+      "publish_date": "2026-06-05",
+      "homepage_url": "https://guangfu.bjx.com.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%85%A8%E9%93%BE%E5%8D%8F%E5%90%8C%E4%B8%80%E7%AB%99%E6%99%BA%E6%8E%A7%2C%E7%BB%BC%E5%90%88+%E8%83%BD%E6%BA%90+%E6%93%98%E7%94%BB%E6%96%B0%E7%A8%8B+%7C+%E6%AD%A3%E6%B3%B0%E6%99%BA%E6%85%A7%E8%83%BD%E6%BA%90%E5%85%A8%E5%9C%BA%E6%99%AF%E7%94%9F%E6%80%81%E4%BA%AE%E7%9B%B8SNEC+202...",
+      "original_url": "https://guangfu.bjx.com.cn/news/20260605/1498716.shtml",
+      "collected_at": "2026-06-07T01:29:51+08:00",
+      "relevance_score": 26,
+      "matched_query": "site:guangfu.bjx.com.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
+      "time_hint": "publish_date:2026-06-05"
+    },
     {
       "id": "bdcecd5b2b523cbe",
       "title": "山东省 能源局 法规文件 关于印发《关于深入推进山东省“人工智能+...",
