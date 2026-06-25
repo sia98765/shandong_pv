@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-25T04:45:22+08:00",
-  "total": 234,
+  "generated_at": "2026-06-25T18:34:20+08:00",
+  "total": 235,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
@@ -57,10 +57,26 @@
   "category_stats": {
     "market": 31,
     "policy": 49,
-    "project": 126,
+    "project": 127,
     "source_grid_load_storage": 28
   },
   "items": [
+    {
+      "id": "9d16775a697e6e1c",
+      "title": "...公共资源交易网-枣庄经济开发区零碳园区基础设施建设 项目招标 ...",
+      "content": "...公共资源交易网-枣庄经济开发区零碳园区基础设施建设 项目招标 ... 3天前 项目名称 招标 人名称 项目概况 招标内容 估算投资 (万元) 预计招标公告发布(或投标邀请书发出)时间 枣庄经济开发区零碳园区基础设施建设 项目 山东 中志企业管理服务有限公司 建设总装机50mw 分布式光伏 ,150mw/300mwh共享储能及园区微电网,新建绿电直供专线12公里及18公里余热输配管网,搭建零碳智控平台,部署能碳监测... 枣庄市公共资源交易网 3天前 项目名称 招标 人名称 项目概况 招标内容 估算投资 (万元) 预计招标公告发布(或投标邀请书发出)时间 枣庄经济开发区零碳园区基础设施建设 项目 山东 中志企业管理服务有限公司 建设总装机50mw 分布式光伏 ,150mw/300mwh共享储能及园区微电网,...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "枣庄公共资源交易中心",
+      "publish_date": "2026-06-23",
+      "homepage_url": "http://ggzy.zaozhuang.gov.cn/",
+      "baidu_search_url": "https://www.baidu.com/s?wd=...%E5%85%AC%E5%85%B1%E8%B5%84%E6%BA%90%E4%BA%A4%E6%98%93%E7%BD%91-%E6%9E%A3%E5%BA%84%E7%BB%8F%E6%B5%8E%E5%BC%80%E5%8F%91%E5%8C%BA%E9%9B%B6%E7%A2%B3%E5%9B%AD%E5%8C%BA%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%BB%BA%E8%AE%BE+%E9%A1%B9%E7%9B%AE%E6%8B%9B%E6%A0%87+...",
+      "original_url": "http://ggzy.zaozhuang.gov.cn/jyxx/018009/018009007/20260623/ce21b1be-b8fd-4db8-b8d3-4de4691e75e6.html",
+      "collected_at": "2026-06-25T17:16:54+08:00",
+      "relevance_score": 33,
+      "matched_query": "site:ggzy.zaozhuang.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
+      "time_hint": "publish_date:2026-06-23"
+    },
     {
       "id": "60201762197cc196",
       "title": "山东 东营市进一步加强 分布式光伏 安全监管工作-北极星太阳能光伏网",

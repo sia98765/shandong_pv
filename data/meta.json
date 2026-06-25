@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-25T04:45:22+08:00",
-  "total": 234,
+  "generated_at": "2026-06-25T18:34:20+08:00",
+  "total": 235,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
@@ -57,7 +57,7 @@
   "category_stats": {
     "market": 31,
     "policy": 49,
-    "project": 126,
+    "project": 127,
     "source_grid_load_storage": 28
   }
 }
