@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-25T18:34:20+08:00",
-  "total": 235,
+  "generated_at": "2026-06-26T05:03:22+08:00",
+  "total": 236,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-06-24",
+    "cutoff_date": "2024-06-25",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -56,7 +56,7 @@
   },
   "category_stats": {
     "market": 31,
-    "policy": 49,
+    "policy": 50,
     "project": 127,
     "source_grid_load_storage": 28
   },
@@ -92,6 +92,22 @@
       "relevance_score": 26,
       "matched_query": "site:guangfu.bjx.com.cn 山东 光伏 分布式光伏 工商业光伏 政策 通知 补贴 并网",
       "time_hint": "publish_date:2026-06-18"
+    },
+    {
+      "id": "633f5f21aace85a4",
+      "title": "全国节能宣传周|推进节能降碳 赋能美丽中国 - 河北省电力有限公司...",
+      "content": "全国节能宣传周|推进节能降碳 赋能美丽中国 - 河北省电力有限公司... 2026年6月17日 随着分布式 光伏发电 大规模并网,公司持续强化城乡配电网规划建设,加快打造现代智慧配电网,不断提升配电网承载力、可靠性和电能质量,更好满足分布式新能源、新型储能及各类新业态发展需要。 当前, 山东 德州陵城区分布式光伏渗透率较高,当地开展高承载力配电网示范建设,围绕网架结构优化、接入模式创新和调控能力提升,推动配电网... 国家电网有限公司STATE  播报  暂停 2026年6月17日 随着分布式 光伏发电 大规模并网,公司持续强化城乡配电网规划建设,加快打造现代智慧配电网,不断提升配电网承载力、可靠性和电能质量,更好满足分布式新能源、新型储能及各类新业态发展需要。 当前, 山东 德州陵城区分布式光伏渗透率较高...",
+      "category": "source_grid_load_storage",
+      "category_label": "源网荷储",
+      "source": "国家电网",
+      "publish_date": "2026-06-17",
+      "homepage_url": "https://www.sgcc.com.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%85%A8%E5%9B%BD%E8%8A%82%E8%83%BD%E5%AE%A3%E4%BC%A0%E5%91%A8%7C%E6%8E%A8%E8%BF%9B%E8%8A%82%E8%83%BD%E9%99%8D%E7%A2%B3+%E8%B5%8B%E8%83%BD%E7%BE%8E%E4%B8%BD%E4%B8%AD%E5%9B%BD+-+%E6%B2%B3%E5%8C%97%E7%9C%81%E7%94%B5%E5%8A%9B%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8...",
+      "original_url": "http://www.he.sgcc.com.cn/html/main/col9/2026-06/18/20260618162614142789008_1.html",
+      "collected_at": "2026-06-26T02:53:17+08:00",
+      "relevance_score": 34,
+      "matched_query": "site:sgcc.com.cn 山东 光伏 市场 装机 发电量 电价 消纳 数据 分析",
+      "time_hint": "publish_date:2026-06-17"
     },
     {
       "id": "953789bd9c57f434",
@@ -3087,18 +3103,18 @@
     },
     {
       "id": "6fa3e5959e37345d",
-      "title": "山东省能源 局 法规文件 山东省人民政府办公厅印发《关于健全完善...",
-      "content": "山东省能源 局 法规文件 山东省人民政府办公厅印发《关于健全完善... 2024年12月18日 支持企业因地制宜采用 新能源 就近直供、绿电交易、 虚拟电厂 、新能源自发自用等4种模式,依托电力市场交易平台和“云大物移智链边”等技术,开展 源网荷储一体化 工作,通过电源、用电负荷、电网、 储能 的多方协同互动,充分挖掘用电负荷侧的调节消纳能力,打造新能源消纳新模式。(省能源局牵头,省发展改革委、国家能源局 山东 ... 山东省能源局  播报  暂停 2024年12月18日 支持企业因地制宜采用 新能源 就近直供、绿电交易、 虚拟电厂 、新能源自发自用等4种模式,依托电力市场交易平台和“云大物移智链边”等技术,开展 源网荷储一体化 工作,通过电源、用电负荷、电网、 储能 的多方协同互动,充分挖掘用电负荷侧的调...",
-      "category": "source_grid_load_storage",
-      "category_label": "源网荷储",
+      "title": "山东省 能源局 法规文件 山东省人民政府办公厅印发《关于健全完善...",
+      "content": "山东省 能源局 法规文件 山东省人民政府办公厅印发《关于健全完善... 2024年12月18日 一、深化电力 市场 化改革 (一)稳步推动新能源入市。完善电力现货市场建设,分类、逐步提高新能源市场化交易比例。2025年到2026年,新增风电项目(含分散式风电,下同)可自主选择全电量或30% 发电量 参与电力市场,新增 光伏 发电项目(含分布式光伏,下同)可自主选择全电量或15%发电量参与电力市场,实施过程中根据国家政策要求变化... 山东省能源局  播报  暂停 2024年12月18日 一、深化电力 市场 化改革 (一)稳步推动新能源入市。完善电力现货市场建设,分类、逐步提高新能源市场化交易比例。2025年到2026年,新增风电项目(含分散式风电,下同)可自主选择全电量或30% 发电量 参与电力市场,新增...",
+      "category": "policy",
+      "category_label": "光伏政策",
       "source": "山东省能源局",
       "publish_date": "2024-12-18",
       "homepage_url": "http://nyj.shandong.gov.cn",
-      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C%E7%9C%81%E8%83%BD%E6%BA%90+%E5%B1%80+%E6%B3%95%E8%A7%84%E6%96%87%E4%BB%B6+%E5%B1%B1%E4%B8%9C%E7%9C%81%E4%BA%BA%E6%B0%91%E6%94%BF%E5%BA%9C%E5%8A%9E%E5%85%AC%E5%8E%85%E5%8D%B0%E5%8F%91%E3%80%8A%E5%85%B3%E4%BA%8E%E5%81%A5%E5%85%A8%E5%AE%8C%E5%96%84...",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C%E7%9C%81+%E8%83%BD%E6%BA%90%E5%B1%80+%E6%B3%95%E8%A7%84%E6%96%87%E4%BB%B6+%E5%B1%B1%E4%B8%9C%E7%9C%81%E4%BA%BA%E6%B0%91%E6%94%BF%E5%BA%9C%E5%8A%9E%E5%85%AC%E5%8E%85%E5%8D%B0%E5%8F%91%E3%80%8A%E5%85%B3%E4%BA%8E%E5%81%A5%E5%85%A8%E5%AE%8C%E5%96%84...",
       "original_url": "http://nyj.shandong.gov.cn/art/2024/12/18/art_354539_10307108.html",
-      "collected_at": "2026-06-22T18:14:00+08:00",
-      "relevance_score": 33,
-      "matched_query": "site:nyj.shandong.gov.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
+      "collected_at": "2026-06-26T02:38:51+08:00",
+      "relevance_score": 35,
+      "matched_query": "site:nyj.shandong.gov.cn 山东 光伏 市场 装机 发电量 电价 消纳 数据 分析",
       "time_hint": "publish_date:2024-12-18"
     },
     {
