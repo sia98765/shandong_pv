@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-29T04:06:22+08:00",
+  "generated_at": "2026-06-30T05:02:12+08:00",
   "total": 236,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-06-28",
+    "cutoff_date": "2024-06-29",
     "allow_undated_default": false
   },
   "query_scope": {
