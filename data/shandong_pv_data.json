@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-02T18:21:43+08:00",
-  "total": 236,
+  "generated_at": "2026-07-03T04:41:46+08:00",
+  "total": 237,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-07-01",
+    "cutoff_date": "2024-07-02",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -58,7 +58,7 @@
     "market": 31,
     "policy": 50,
     "project": 127,
-    "source_grid_load_storage": 28
+    "source_grid_load_storage": 29
   },
   "items": [
     {
@@ -2332,6 +2332,22 @@
       "relevance_score": 21,
       "matched_query": "site:ggzyjy.rizhao.gov.cn 光伏项目",
       "time_hint": "publish_date:2025-06-17"
+    },
+    {
+      "id": "2220dd41ba87a8b5",
+      "title": "汇聚全链力量 共建新型 能源 生态!正泰亮相SNEC2025-北极星太阳能光伏网",
+      "content": "汇聚全链力量 共建新型 能源 生态!正泰亮相SNEC2025-北极星太阳能光伏网 2025年6月12日 正泰 新能源虚拟电厂 解决方案,依托“新能源+互联网”技术,通过对应用场景充分聚合优化,灵活实现削峰填谷的功能,优化运行控制和市场交易;正泰安能以虚拟电厂(VPP)和能源即服务(EaaS) 为核心,构建覆盖新能源投资、开发、建设、运管、售电全生命周期的创新模式;泰能电力园区绿色智能配电网解决方案以 源网荷储 充 一体化 为核心... 22 北极星太阳能光伏网  播报  暂停 2025年6月12日 正泰 新能源虚拟电厂 解决方案,依托“新能源+互联网”技术,通过对应用场景充分聚合优化,灵活实现削峰填谷的功能,优化运行控制和市场交易;正泰安能以虚拟电厂(VPP)和能源即服务(EaaS) 为核心,构建覆盖新能源...",
+      "category": "source_grid_load_storage",
+      "category_label": "源网荷储",
+      "source": "北极星太阳能光伏网",
+      "publish_date": "2025-06-12",
+      "homepage_url": "https://guangfu.bjx.com.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E6%B1%87%E8%81%9A%E5%85%A8%E9%93%BE%E5%8A%9B%E9%87%8F+%E5%85%B1%E5%BB%BA%E6%96%B0%E5%9E%8B+%E8%83%BD%E6%BA%90+%E7%94%9F%E6%80%81%21%E6%AD%A3%E6%B3%B0%E4%BA%AE%E7%9B%B8SNEC2025-%E5%8C%97%E6%9E%81%E6%98%9F%E5%A4%AA%E9%98%B3%E8%83%BD%E5%85%89%E4%BC%8F%E7%BD%91",
+      "original_url": "https://guangfu.bjx.com.cn/news/20250612/1445903.shtml",
+      "collected_at": "2026-07-03T02:05:57+08:00",
+      "relevance_score": 29,
+      "matched_query": "site:guangfu.bjx.com.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
+      "time_hint": "publish_date:2025-06-12"
     },
     {
       "id": "5fe45cadd3c9d532",
