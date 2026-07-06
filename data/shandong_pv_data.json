@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-06T04:04:02+08:00",
-  "total": 237,
+  "generated_at": "2026-07-06T19:20:44+08:00",
+  "total": 239,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
@@ -57,10 +57,26 @@
   "category_stats": {
     "market": 31,
     "policy": 50,
-    "project": 127,
+    "project": 129,
     "source_grid_load_storage": 29
   },
   "items": [
+    {
+      "id": "ee06fbde96d3f8e4",
+      "title": "潍坊市公共资源交易中心-安丘市充电基础设施补短板 项目招标 公告",
+      "content": "潍坊市公共资源交易中心-安丘市充电基础设施补短板 项目招标 公告 5天前 2.2 项目 概况:本 项目 包含市民活动中心、新安路等多处光储充停一体化独立场站的充电设施、 光伏 发电系统、储能系统、停车配套设施以及配套高压供电等建设。建设内容包括箱式变电站3套、充电柜主机5套、汽车充电终端58个、 光伏 车棚2处,储能设备2套,二轮充电车棚10处(膜结构车棚及充电设施)以及配套的辅助设施(道闸、监... ggzy.weifang.gov.cn:8082/wfggzy/jyxx...  播报  暂停 5天前 2.2 项目 概况:本 项目 包含市民活动中心、新安路等多处光储充停一体化独立场站的充电设施、 光伏 发电系统、储能系统、停车配套设施以及配套高压供电等建设。建设内容包括箱式变电站3套、充电柜主机5套、汽车...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "潍坊公共资源交易中心",
+      "publish_date": "2026-07-02",
+      "homepage_url": "http://ggzy.weifang.gov.cn:8082/wfggzy/",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E6%BD%8D%E5%9D%8A%E5%B8%82%E5%85%AC%E5%85%B1%E8%B5%84%E6%BA%90%E4%BA%A4%E6%98%93%E4%B8%AD%E5%BF%83-%E5%AE%89%E4%B8%98%E5%B8%82%E5%85%85%E7%94%B5%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E8%A1%A5%E7%9F%AD%E6%9D%BF+%E9%A1%B9%E7%9B%AE%E6%8B%9B%E6%A0%87+%E5%85%AC%E5%91%8A",
+      "original_url": "http://ggzy.weifang.gov.cn:8082/wfggzy/jyxx/007001/007001001/20260702/73abe4f0-e900-4c3b-a399-39d8db5090ba.html",
+      "collected_at": "2026-07-06T18:22:57+08:00",
+      "relevance_score": 26,
+      "matched_query": "site:ggzy.weifang.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
+      "time_hint": "publish_date:2026-07-02"
+    },
     {
       "id": "9d16775a697e6e1c",
       "title": "...公共资源交易网-枣庄经济开发区零碳园区基础设施建设 项目招标 ...",
@@ -124,6 +140,22 @@
       "relevance_score": 27,
       "matched_query": "site:sgcc.com.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
       "time_hint": "publish_date:2026-06-15"
+    },
+    {
+      "id": "c7c616f7ceb5d19d",
+      "title": "电力、新能源工程",
+      "content": "电力、新能源工程 6天前 济南市章丘区300MW/600MWh工商业储能 项目 监理[2026-06-08] 济南市章丘区300MW/600MWh工商业储能项目工程总承包( EPC) [2026-06-08] 章丘区400MW 分布式光伏 发电项目(一期)50MW监理[2026-06-08] 章丘区400MW分布式光伏发电项目(一期)50MW工程总承包(EPC)[2026-06-08] ... 济南公共资源交易中心 6天前 济南市章丘区300MW/600MWh工商业储能 项目 监理[2026-06-08] 济南市章丘区300MW/600MWh工商业储能项目工程总承包( EPC) [2026-06-08] 章丘区400MW 分布式光伏 发电项目(一期)50MW监理[2026-06-08] 章丘区400MW分布式光...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "济南公共资源交易中心",
+      "publish_date": "2026-06-08",
+      "homepage_url": "https://jnggzy.jinan.gov.cn/",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E7%94%B5%E5%8A%9B%E3%80%81%E6%96%B0%E8%83%BD%E6%BA%90%E5%B7%A5%E7%A8%8B",
+      "original_url": "http://jnggzy.jinan.gov.cn/col/col93984/ggzyzbjh/index.html",
+      "collected_at": "2026-07-06T17:45:36+08:00",
+      "relevance_score": 27,
+      "matched_query": "site:jnggzy.jinan.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
+      "time_hint": "publish_date:2026-06-08"
     },
     {
       "id": "54d1dd6378dce04e",
