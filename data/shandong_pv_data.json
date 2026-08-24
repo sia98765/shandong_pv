@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-24T03:18:38+08:00",
-  "total": 263,
+  "generated_at": "2026-08-24T15:38:19+08:00",
+  "total": 264,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
@@ -58,7 +58,7 @@
     "market": 36,
     "policy": 57,
     "project": 135,
-    "source_grid_load_storage": 35
+    "source_grid_load_storage": 36
   },
   "items": [
     {
@@ -2252,6 +2252,22 @@
       "relevance_score": 21,
       "matched_query": "site:hzsjyzx.cn 光伏项目",
       "time_hint": "publish_date:2025-08-26"
+    },
+    {
+      "id": "e4486dafa7689f58",
+      "title": "海尔 新能源 “首钢 源网荷储一体化 项目”获第三届能源电子产业创新大赛一等奖...",
+      "content": "海尔 新能源 “首钢 源网荷储一体化 项目”获第三届能源电子产业创新大赛一等奖... 2025年8月22日 8月21日,第三届能源电子产业创新大赛“源网荷储技术创新与应用实践专题赛”在青岛成功举办。大赛由工业和信息化部产业发展促进中心主办,旨在推动 源网荷储一体化 创新发展,激发产业活力,助力新型能源体系建设。海尔 新能源 打造的“首钢(青岛)源网荷储一体化智慧能源管理项目”在40余个项目中脱颖而出,荣获大赛一等奖。 北极星太阳能光伏网  播报  暂停 2025年8月22日 8月21日,第三届能源电子产业创新大赛“源网荷储技术创新与应用实践专题赛”在青岛成功举办。大赛由工业和信息化部产业发展促进中心主办,旨在推动 源网荷储一体化 创新发展,激发产业活力,助力新型能源体系建设。海尔 新能源 打造的“首钢(青岛...",
+      "category": "source_grid_load_storage",
+      "category_label": "源网荷储",
+      "source": "北极星太阳能光伏网",
+      "publish_date": "2025-08-22",
+      "homepage_url": "https://guangfu.bjx.com.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E6%B5%B7%E5%B0%94+%E6%96%B0%E8%83%BD%E6%BA%90+%E2%80%9C%E9%A6%96%E9%92%A2+%E6%BA%90%E7%BD%91%E8%8D%B7%E5%82%A8%E4%B8%80%E4%BD%93%E5%8C%96+%E9%A1%B9%E7%9B%AE%E2%80%9D%E8%8E%B7%E7%AC%AC%E4%B8%89%E5%B1%8A%E8%83%BD%E6%BA%90%E7%94%B5%E5%AD%90%E4%BA%A7%E4%B8%9A%E5%88%9B%E6%96%B0%E5%A4%A7%E8%B5%9B%E4%B8%80%E7%AD%89%E5%A5%96...",
+      "original_url": "https://guangfu.bjx.com.cn/news/20250822/1457164.shtml",
+      "collected_at": "2026-08-24T13:02:17+08:00",
+      "relevance_score": 33,
+      "matched_query": "site:guangfu.bjx.com.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
+      "time_hint": "publish_date:2025-08-22"
     },
     {
       "id": "5cce154d84d8d68c",
