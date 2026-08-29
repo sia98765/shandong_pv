@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-29T11:27:38+08:00",
-  "total": 264,
+  "generated_at": "2026-08-29T21:54:04+08:00",
+  "total": 266,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
@@ -56,11 +56,27 @@
   },
   "category_stats": {
     "market": 36,
-    "policy": 57,
-    "project": 135,
+    "policy": 58,
+    "project": 136,
     "source_grid_load_storage": 36
   },
   "items": [
+    {
+      "id": "0ebc69529a01fde1",
+      "title": "山东省 能源局 通知公告 关于加快推动新能源场站配建储能高质量...",
+      "content": "山东省 能源局 通知公告 关于加快推动新能源场站配建储能高质量... 2天前 为积极适应新能源 发电市场 化改革新形势新要求,提升新能源场站运营水平,促进新能源发电就地就近 消纳 ,推动新能源与新型储能协同健康发展,依据《国家能源局关于促进新能源集成融合发展的指导意见》《新型储能规模化建设专项行动方案(2025—2027年)》等文件要求,现将有关事项通知如下。 山东省能源局  播报  暂停 2天前 为积极适应新能源 发电市场 化改革新形势新要求,提升新能源场站运营水平,促进新能源发电就地就近 消纳 ,推动新能源与新型储能协同健康发展,依据《国家能源局关于促进新能源集成融合发展的指导意见》《新型储能规模化建设专项行动方案(2025—2027年)》等文件要求,现将有关事项通知如下。",
+      "category": "policy",
+      "category_label": "光伏政策",
+      "source": "山东省能源局",
+      "publish_date": "2026-08-28",
+      "homepage_url": "http://nyj.shandong.gov.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C%E7%9C%81+%E8%83%BD%E6%BA%90%E5%B1%80+%E9%80%9A%E7%9F%A5%E5%85%AC%E5%91%8A+%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%BF%AB%E6%8E%A8%E5%8A%A8%E6%96%B0%E8%83%BD%E6%BA%90%E5%9C%BA%E7%AB%99%E9%85%8D%E5%BB%BA%E5%82%A8%E8%83%BD%E9%AB%98%E8%B4%A8%E9%87%8F...",
+      "original_url": "http://nyj.shandong.gov.cn/art/2026/8/28/art_59960_10313195.html",
+      "collected_at": "2026-08-29T19:18:53+08:00",
+      "relevance_score": 36,
+      "matched_query": "site:nyj.shandong.gov.cn 山东 光伏 市场 装机 发电量 电价 消纳 数据 分析",
+      "time_hint": "publish_date:2026-08-28"
+    },
     {
       "id": "5d85be004056d6fb",
       "title": "聊城市公共资源交易中心",
@@ -74,6 +90,22 @@
       "original_url": "http://ggzyjy.liaocheng.gov.cn/lcggzy/zbtzs/017003/017003014/20260820/dd2a6969-254d-41bb-b5f1-0f10cce79c8b.html",
       "collected_at": "2026-08-21T10:50:47+08:00",
       "relevance_score": 26,
+      "matched_query": "site:ggzyjy.liaocheng.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
+      "time_hint": "publish_date:2026-08-20"
+    },
+    {
+      "id": "a186e64bc317210a",
+      "title": "聊城市高唐县人民医院 分布式光伏 发电 项目中标 结果公告",
+      "content": "聊城市高唐县人民医院 分布式光伏 发电 项目中标 结果公告 2026年8月20日 九, 未 中标 投标人的未 中标 原因: 标段名称 投标人名称 未 中标 原因 聊城市高唐县人民医院分布式光伏发电项目 创新电力建设(山东)集团有限公司 综合评审得分较低 山东东源电力工程有限公司(联合体成员:高唐县鑫星光伏设备安装有限公司) 综合评审得分较低 十 ,凡对本次公告内容提出询问,请按以下方式联系. 1. 招... 聊城市公共资源交易中心 2026年8月20日 九, 未 中标 投标人的未 中标 原因: 标段名称 投标人名称 未 中标 原因 聊城市高唐县人民医院分布式光伏发电项目 创新电力建设(山东)集团有限公司 综合评审得分较低 山东东源电力工程有限公司(联合体成员:高唐县鑫星光伏设备安装有限公司) 综合评审得分较低...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "聊城公共资源交易中心",
+      "publish_date": "2026-08-20",
+      "homepage_url": "http://ggzyjy.liaocheng.gov.cn/",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E8%81%8A%E5%9F%8E%E5%B8%82%E9%AB%98%E5%94%90%E5%8E%BF%E4%BA%BA%E6%B0%91%E5%8C%BB%E9%99%A2+%E5%88%86%E5%B8%83%E5%BC%8F%E5%85%89%E4%BC%8F+%E5%8F%91%E7%94%B5+%E9%A1%B9%E7%9B%AE%E4%B8%AD%E6%A0%87+%E7%BB%93%E6%9E%9C%E5%85%AC%E5%91%8A",
+      "original_url": "http://ggzyjy.liaocheng.gov.cn/lcggzy/jyxx/003006/003006003/003006003014/20260820/52162d70-3af9-4f75-8b0a-3d5f64473d9e.html",
+      "collected_at": "2026-08-29T21:38:54+08:00",
+      "relevance_score": 23,
       "matched_query": "site:ggzyjy.liaocheng.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
       "time_hint": "publish_date:2026-08-20"
     },
