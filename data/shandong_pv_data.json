@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-30T20:49:08+08:00",
-  "total": 266,
+  "generated_at": "2026-08-31T06:11:41+08:00",
+  "total": 267,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-08-29",
+    "cutoff_date": "2024-08-30",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -57,7 +57,7 @@
   "category_stats": {
     "market": 36,
     "policy": 58,
-    "project": 136,
+    "project": 137,
     "source_grid_load_storage": 36
   },
   "items": [
@@ -3100,6 +3100,22 @@
       "relevance_score": 30,
       "matched_query": "site:ggzyjy.rizhao.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
       "time_hint": "publish_date:2025-03-21"
+    },
+    {
+      "id": "eea9579353b2ffde",
+      "title": "山东 淄川区2025年第三次 光伏 平价上网项目名单公布-北极星太阳能光伏网",
+      "content": "山东 淄川区2025年第三次 光伏 平价上网项目名单公布-北极星太阳能光伏网 2025年3月18日 3月14日,淄川区发展和改革局发布关于2025年第三次光伏平价上网项目名单的公示,文件指出,根据公示文件,此次入选淄川区2025年第三次光伏平价上网项目名单的项目为淄博博宇食品科技有限责任公司90千瓦 分布式光伏 发电项目、淄川区孙达制衣加工点(个体工商户)110KW太阳能分布式光伏发电项目、 山东 金铂力数控机床制造有限公司新上23... 北极星太阳能光伏网  播报  暂停 2025年3月18日 3月14日,淄川区发展和改革局发布关于2025年第三次光伏平价上网项目名单的公示,文件指出,根据公示文件,此次入选淄川区2025年第三次光伏平价上网项目名单的项目为淄博博宇食品科技有限责任公司90千瓦 分布式光伏...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "北极星太阳能光伏网",
+      "publish_date": "2025-03-18",
+      "homepage_url": "https://guangfu.bjx.com.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C+%E6%B7%84%E5%B7%9D%E5%8C%BA2025%E5%B9%B4%E7%AC%AC%E4%B8%89%E6%AC%A1+%E5%85%89%E4%BC%8F+%E5%B9%B3%E4%BB%B7%E4%B8%8A%E7%BD%91%E9%A1%B9%E7%9B%AE%E5%90%8D%E5%8D%95%E5%85%AC%E5%B8%83-%E5%8C%97%E6%9E%81%E6%98%9F%E5%A4%AA%E9%98%B3%E8%83%BD%E5%85%89%E4%BC%8F%E7%BD%91",
+      "original_url": "https://guangfu.bjx.com.cn/news/20250318/1432522.shtml",
+      "collected_at": "2026-08-31T03:18:12+08:00",
+      "relevance_score": 31,
+      "matched_query": "site:guangfu.bjx.com.cn 山东 光伏 分布式光伏 工商业光伏 政策 通知 补贴 并网",
+      "time_hint": "publish_date:2025-03-18"
     },
     {
       "id": "211e8daa5284ab88",
