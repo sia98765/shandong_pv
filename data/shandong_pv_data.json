@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-06T05:03:21+08:00",
-  "total": 269,
+  "generated_at": "2026-09-06T19:28:49+08:00",
+  "total": 270,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
@@ -58,7 +58,7 @@
     "market": 37,
     "policy": 59,
     "project": 137,
-    "source_grid_load_storage": 36
+    "source_grid_load_storage": 37
   },
   "items": [
     {
@@ -1372,6 +1372,22 @@
       "relevance_score": 21,
       "matched_query": "site:hzsjyzx.cn 光伏项目",
       "time_hint": "publish_date:2026-01-06"
+    },
+    {
+      "id": "1fcdda598a910db2",
+      "title": "...规划建议:打造多能互补 新能源 开发体系 有序推进太阳能、地热能等开发利...",
+      "content": "...规划建议:打造多能互补 新能源 开发体系 有序推进太阳能、地热能等开发利... 2026年1月5日 加强化石能源清洁高效利用,推进煤电改造升级,加快推进黄台电厂退城进郊异地迁建。全面提升电力系统互补互济和安全韧性水平,发展分布式新型 储能 ,科学布局抽水蓄能,完善配电网和智能微电网,积极推广“ 虚拟电厂 ”,有序推进绿电直连发展。鼓励发展“ 源网荷储 ” 一体化 ,推进济南新旧动能转换起步区综合智慧能源试点建设。 北极星太阳能光伏网  播报  暂停 2026年1月5日 加强化石能源清洁高效利用,推进煤电改造升级,加快推进黄台电厂退城进郊异地迁建。全面提升电力系统互补互济和安全韧性水平,发展分布式新型 储能 ,科学布局抽水蓄能,完善配电网和智能微电网,积极推广“ 虚拟电厂 ”,有序推进绿电直连发展。鼓励...",
+      "category": "source_grid_load_storage",
+      "category_label": "源网荷储",
+      "source": "北极星太阳能光伏网",
+      "publish_date": "2026-01-05",
+      "homepage_url": "https://guangfu.bjx.com.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=...%E8%A7%84%E5%88%92%E5%BB%BA%E8%AE%AE%3A%E6%89%93%E9%80%A0%E5%A4%9A%E8%83%BD%E4%BA%92%E8%A1%A5+%E6%96%B0%E8%83%BD%E6%BA%90+%E5%BC%80%E5%8F%91%E4%BD%93%E7%B3%BB+%E6%9C%89%E5%BA%8F%E6%8E%A8%E8%BF%9B%E5%A4%AA%E9%98%B3%E8%83%BD%E3%80%81%E5%9C%B0%E7%83%AD%E8%83%BD%E7%AD%89%E5%BC%80%E5%8F%91%E5%88%A9...",
+      "original_url": "https://guangfu.bjx.com.cn/news/20260105/1478023-3.shtml",
+      "collected_at": "2026-09-06T16:43:52+08:00",
+      "relevance_score": 29,
+      "matched_query": "site:guangfu.bjx.com.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
+      "time_hint": "publish_date:2026-01-05"
     },
     {
       "id": "91046321668a8294",
