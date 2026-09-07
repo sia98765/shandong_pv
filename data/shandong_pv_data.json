@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-07T20:07:04+08:00",
-  "total": 275,
+  "generated_at": "2026-09-08T06:45:09+08:00",
+  "total": 276,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-09-06",
+    "cutoff_date": "2024-09-07",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -55,10 +55,10 @@
     "path_positive_rules_removed": true
   },
   "category_stats": {
-    "market": 37,
-    "policy": 59,
+    "market": 38,
+    "policy": 58,
     "project": 139,
-    "source_grid_load_storage": 40
+    "source_grid_load_storage": 41
   },
   "items": [
     {
@@ -862,6 +862,22 @@
       "time_hint": "publish_date:2026-04-03"
     },
     {
+      "id": "04c58e4b94fd26b0",
+      "title": "山东省能源 局 动态要闻 【中国发展改革报社】2026年山东持续提高...",
+      "content": "山东省能源 局 动态要闻 【中国发展改革报社】2026年山东持续提高... 2026年4月2日 支持就近消纳新业态,积极推广 源网荷储一体化 、绿电直连、绿电产业园、零碳园区等新模式。 山东省能源局  播报  暂停 2026年4月2日 支持就近消纳新业态,积极推广 源网荷储一体化 、绿电直连、绿电产业园、零碳园区等新模式。 山东省能源局",
+      "category": "market",
+      "category_label": "市场分析",
+      "source": "山东省能源局",
+      "publish_date": "2026-04-02",
+      "homepage_url": "http://nyj.shandong.gov.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C%E7%9C%81%E8%83%BD%E6%BA%90+%E5%B1%80+%E5%8A%A8%E6%80%81%E8%A6%81%E9%97%BB+%E3%80%90%E4%B8%AD%E5%9B%BD%E5%8F%91%E5%B1%95%E6%94%B9%E9%9D%A9%E6%8A%A5%E7%A4%BE%E3%80%912026%E5%B9%B4%E5%B1%B1%E4%B8%9C%E6%8C%81%E7%BB%AD%E6%8F%90%E9%AB%98...",
+      "original_url": "http://nyj.shandong.gov.cn/art/2026/4/2/art_59966_10311634.html",
+      "collected_at": "2026-09-08T04:14:43+08:00",
+      "relevance_score": 31,
+      "matched_query": "site:nyj.shandong.gov.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
+      "time_hint": "publish_date:2026-04-02"
+    },
+    {
       "id": "69fa0b915d287ab0",
       "title": "山东省 能源局 动态要闻 答记者问|今年年底,山东虚拟电厂调节能力...",
       "content": "山东省 能源局 动态要闻 答记者问|今年年底,山东虚拟电厂调节能力... 2026年4月2日 第二,深化新能源上网 电价市场 化改革,增强价格机制引导作用。按照国家统一部署, 山东 自2025年起全面启动新能源上网电价市场化改革,推动新能源上网 电量 全部进入电力市场,通过市场交易形成上网电价。在电力市场中,不同时间和空间的电力,结算价格也具有明显差异。简单来说,在午间 光伏 大发时,将富余电量储存起来,在用电高峰时段... 5 山东省能源局  播报  暂停 2026年4月2日 第二,深化新能源上网 电价市场 化改革,增强价格机制引导作用。按照国家统一部署, 山东 自2025年起全面启动新能源上网电价市场化改革,推动新能源上网 电量 全部进入电力市场,通过市场交易形成上网电价。在电力市场中,不同时间和空间的...",
@@ -895,18 +911,18 @@
     },
     {
       "id": "5c5f29e1d11bfa34",
-      "title": "山东省能源局 动态要闻 权威发布|山东出台22条硬措施促进绿电替代...",
-      "content": "山东省能源局 动态要闻 权威发布|山东出台22条硬措施促进绿电替代... 2026年4月2日 明确提出强化“十五五”相关规划引领、研究出台促进 光伏 发电高质量发展的 政策 文件、深化近中远期风光新能源消纳能力提升、孤立电网企业转型等课题研究。二是创新性。首次提出“增强新能源涉网安全性能”“提升需求侧响应能力”“赋能城乡低碳发展”等新措施。三是延续性。加大政策保障力度,稳定市场预期,延续2025年行动方案... 山东省能源局  播报  暂停 2026年4月2日 明确提出强化“十五五”相关规划引领、研究出台促进 光伏 发电高质量发展的 政策 文件、深化近中远期风光新能源消纳能力提升、孤立电网企业转型等课题研究。二是创新性。首次提出“增强新能源涉网安全性能”“提升需求侧响应能力”“赋能城乡低碳发展”等新措施。三...",
-      "category": "policy",
-      "category_label": "光伏政策",
+      "title": "山东省能源 局 动态要闻 权威发布|山东出台22条硬措施促进绿电替代...",
+      "content": "山东省能源 局 动态要闻 权威发布|山东出台22条硬措施促进绿电替代... 2026年4月2日 支持就近消纳新业态,积极推广 源网荷储一体化 、绿电直连、绿电产业园、零碳园区等新模式。 山东省能源局  播报  暂停 2026年4月2日 支持就近消纳新业态,积极推广 源网荷储一体化 、绿电直连、绿电产业园、零碳园区等新模式。 山东省能源局",
+      "category": "source_grid_load_storage",
+      "category_label": "源网荷储",
       "source": "山东省能源局",
       "publish_date": "2026-04-02",
       "homepage_url": "http://nyj.shandong.gov.cn",
-      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C%E7%9C%81%E8%83%BD%E6%BA%90%E5%B1%80+%E5%8A%A8%E6%80%81%E8%A6%81%E9%97%BB+%E6%9D%83%E5%A8%81%E5%8F%91%E5%B8%83%7C%E5%B1%B1%E4%B8%9C%E5%87%BA%E5%8F%B022%E6%9D%A1%E7%A1%AC%E6%8E%AA%E6%96%BD%E4%BF%83%E8%BF%9B%E7%BB%BF%E7%94%B5%E6%9B%BF%E4%BB%A3...",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C%E7%9C%81%E8%83%BD%E6%BA%90+%E5%B1%80+%E5%8A%A8%E6%80%81%E8%A6%81%E9%97%BB+%E6%9D%83%E5%A8%81%E5%8F%91%E5%B8%83%7C%E5%B1%B1%E4%B8%9C%E5%87%BA%E5%8F%B022%E6%9D%A1%E7%A1%AC%E6%8E%AA%E6%96%BD%E4%BF%83%E8%BF%9B%E7%BB%BF%E7%94%B5%E6%9B%BF%E4%BB%A3...",
       "original_url": "http://nyj.shandong.gov.cn/art/2026/4/2/art_59966_10311633.html",
-      "collected_at": "2026-05-17T12:58:24+08:00",
-      "relevance_score": 24,
-      "matched_query": "site:nyj.shandong.gov.cn 光伏政策",
+      "collected_at": "2026-09-08T04:14:43+08:00",
+      "relevance_score": 27,
+      "matched_query": "site:nyj.shandong.gov.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
       "time_hint": "publish_date:2026-04-02"
     },
     {
