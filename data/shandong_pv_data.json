@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-11T19:43:22+08:00",
-  "total": 276,
+  "generated_at": "2026-09-12T06:00:56+08:00",
+  "total": 277,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-09-10",
+    "cutoff_date": "2024-09-11",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -57,7 +57,7 @@
   "category_stats": {
     "market": 38,
     "policy": 58,
-    "project": 139,
+    "project": 140,
     "source_grid_load_storage": 41
   },
   "items": [
@@ -74,6 +74,22 @@
       "original_url": "http://ggzyjy.dezhou.gov.cn/ll/xmxx/004001/004001005/004001005002/20260907/05f96d1c-cfaf-4c24-b67d-182bac8674c4.html",
       "collected_at": "2026-09-07T19:45:11+08:00",
       "relevance_score": 30,
+      "matched_query": "site:ggzyjy.dezhou.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
+      "time_hint": "publish_date:2026-09-07"
+    },
+    {
+      "id": "6789bc30ebffcf21",
+      "title": "乐陵市乐创绿能艺点数谷产业园5.61MW 分布式光伏 发电 项目EPC 总承包...",
+      "content": "乐陵市乐创绿能艺点数谷产业园5.61MW 分布式光伏 发电 项目EPC 总承包... 6天前 一、项目名称:乐陵市乐创绿能艺点数谷产业园5.61MW 分布式光伏 发电 项目EPC 总承包及监理 二、项目法人(或 招标 人):乐陵市乐创绿能新能源科技有限公司 三、项目概况:项目位于乐陵市恒源路与挺进西路交叉口东南侧,不动产单元号为鲁(2025)乐陵市不动产权第0005121号。项目租赁乐陵市华融园区产业投资开发有限... 德州市公共资源交易网  播报  暂停 6天前 一、项目名称:乐陵市乐创绿能艺点数谷产业园5.61MW 分布式光伏 发电 项目EPC 总承包及监理 二、项目法人(或 招标 人):乐陵市乐创绿能新能源科技有限公司 三、项目概况:项目位于乐陵市恒源路与挺进西路交叉口东南侧,不动产单元号为鲁(202...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "德州公共资源交易中心",
+      "publish_date": "2026-09-07",
+      "homepage_url": "https://ggzyjy.dezhou.gov.cn/TPFront/",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E4%B9%90%E9%99%B5%E5%B8%82%E4%B9%90%E5%88%9B%E7%BB%BF%E8%83%BD%E8%89%BA%E7%82%B9%E6%95%B0%E8%B0%B7%E4%BA%A7%E4%B8%9A%E5%9B%AD5.61MW+%E5%88%86%E5%B8%83%E5%BC%8F%E5%85%89%E4%BC%8F+%E5%8F%91%E7%94%B5+%E9%A1%B9%E7%9B%AEEPC+%E6%80%BB%E6%89%BF%E5%8C%85...",
+      "original_url": "http://ggzyjy.dezhou.gov.cn/ll/xmxx/004001/004001005/004001005002/20260907/db8f9944-a0ab-4753-807a-dccf2d7dcc76.html",
+      "collected_at": "2026-09-12T05:39:15+08:00",
+      "relevance_score": 29,
       "matched_query": "site:ggzyjy.dezhou.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
       "time_hint": "publish_date:2026-09-07"
     },
