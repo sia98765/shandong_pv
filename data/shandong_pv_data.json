@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-13T05:11:31+08:00",
-  "total": 277,
+  "generated_at": "2026-09-13T20:20:37+08:00",
+  "total": 278,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
@@ -57,7 +57,7 @@
   "category_stats": {
     "market": 38,
     "policy": 58,
-    "project": 140,
+    "project": 141,
     "source_grid_load_storage": 41
   },
   "items": [
@@ -3404,6 +3404,22 @@
       "relevance_score": 23,
       "matched_query": "site:ggzy.dongying.gov.cn 光伏政策",
       "time_hint": "publish_date:2025-02-27"
+    },
+    {
+      "id": "e0029dde023aca2c",
+      "title": "枣菏高速公路交能融合 源网荷储一体化 示范工程项目开工-北极星太阳能光伏网",
+      "content": "枣菏高速公路交能融合 源网荷储一体化 示范工程项目开工-北极星太阳能光伏网 2025年2月21日 2月16日,中国能建山西电建承建的枣菏高速公路交能融合( 源网荷储一体化 )示范工程项目滕州段开工。 滕州段工程拟在 山东省 枣庄至菏泽段高速公路边坡(南侧)及服务区(收费站)建设光伏发电项目,该段高速公路长31.5公里,横跨滕州市下属4个镇。 项目投产后,将提供充足的“绿电”供应,年平均发电量约1900万千瓦时,与相同... 北极星太阳能光伏网  播报  暂停 2025年2月21日 2月16日,中国能建山西电建承建的枣菏高速公路交能融合( 源网荷储一体化 )示范工程项目滕州段开工。 滕州段工程拟在 山东省 枣庄至菏泽段高速公路边坡(南侧)及服务区(收费站)建设光伏发电项目,该段高速公路长31.5公里,横跨滕州...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "北极星太阳能光伏网",
+      "publish_date": "2025-02-21",
+      "homepage_url": "https://guangfu.bjx.com.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E6%9E%A3%E8%8F%8F%E9%AB%98%E9%80%9F%E5%85%AC%E8%B7%AF%E4%BA%A4%E8%83%BD%E8%9E%8D%E5%90%88+%E6%BA%90%E7%BD%91%E8%8D%B7%E5%82%A8%E4%B8%80%E4%BD%93%E5%8C%96+%E7%A4%BA%E8%8C%83%E5%B7%A5%E7%A8%8B%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%B7%A5-%E5%8C%97%E6%9E%81%E6%98%9F%E5%A4%AA%E9%98%B3%E8%83%BD%E5%85%89%E4%BC%8F%E7%BD%91",
+      "original_url": "https://guangfu.bjx.com.cn/news/20250221/1428370.shtml",
+      "collected_at": "2026-09-13T17:33:53+08:00",
+      "relevance_score": 30,
+      "matched_query": "site:guangfu.bjx.com.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
+      "time_hint": "publish_date:2025-02-21"
     },
     {
       "id": "860d309397d2a932",
