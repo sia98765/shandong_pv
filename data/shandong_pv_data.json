@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-16T20:09:53+08:00",
-  "total": 280,
+  "generated_at": "2026-09-17T06:27:55+08:00",
+  "total": 281,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-09-15",
+    "cutoff_date": "2024-09-16",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -57,7 +57,7 @@
   "category_stats": {
     "market": 38,
     "policy": 58,
-    "project": 142,
+    "project": 143,
     "source_grid_load_storage": 42
   },
   "items": [
@@ -91,6 +91,22 @@
       "collected_at": "2026-09-07T19:45:11+08:00",
       "relevance_score": 30,
       "matched_query": "site:ggzyjy.dezhou.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
+      "time_hint": "publish_date:2026-09-07"
+    },
+    {
+      "id": "9cf7700443d23dda",
+      "title": "淄博市公共资源交易网",
+      "content": "淄博市公共资源交易网 2026.09.07 · 招标 文件预公示 2026.09.11 · 淄博奥巨光伏新能源有限公司北京京丰制药(山东)有限公司1200kW分布式光伏项目采购招标文件预公示 2026.09.11 · 淄博火车站北广场片区改造提升项目供水配套工程—回迁安置房供水管线及供水设施工程材料采购招标文件预公示 2026.09.11 · 淄博火车站北广场 淄博市公共资源交易网 2026.09.07 · 招标 文件预公示 2026.09.11 · 淄博奥巨光伏新能源有限公司北京京丰制药(山东)有限公司1200kW分布式光伏项目采购招标文件预公示 2026.09.11 · 淄博火车站北广场片区改造提升项目供水配套工程—回迁安置房供水管线及供水设施工程材料采购招标文件预公示 2026.09.11 · 淄博火车站...",
+      "category": "project",
+      "category_label": "项目信息",
+      "source": "淄博公共资源交易中心",
+      "publish_date": "2026-09-07",
+      "homepage_url": "http://ggzyjy.zibo.gov.cn:8082/",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E6%B7%84%E5%8D%9A%E5%B8%82%E5%85%AC%E5%85%B1%E8%B5%84%E6%BA%90%E4%BA%A4%E6%98%93%E7%BD%91",
+      "original_url": "https://ggzyjy.zibo.gov.cn/zcgg/news.html",
+      "collected_at": "2026-09-17T04:57:50+08:00",
+      "relevance_score": 29,
+      "matched_query": "site:ggzyjy.zibo.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
       "time_hint": "publish_date:2026-09-07"
     },
     {
