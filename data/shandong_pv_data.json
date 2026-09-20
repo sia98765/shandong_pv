@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-20T05:31:38+08:00",
-  "total": 281,
+  "generated_at": "2026-09-20T20:10:35+08:00",
+  "total": 282,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
@@ -55,9 +55,9 @@
     "path_positive_rules_removed": true
   },
   "category_stats": {
-    "market": 38,
+    "market": 40,
     "policy": 58,
-    "project": 143,
+    "project": 142,
     "source_grid_load_storage": 42
   },
   "items": [
@@ -76,6 +76,22 @@
       "relevance_score": 31,
       "matched_query": "site:sgcc.com.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
       "time_hint": "publish_date:2026-09-11"
+    },
+    {
+      "id": "4e6b25d9eadca0d9",
+      "title": "电力、新能源工程",
+      "content": "电力、新能源工程 7天前 济南工业母机产业园 分布式光伏 发电投资项目建设工程 EPC 总承包 [2026-09-07] 山东第一医科大学附属肿瘤医院( 山东省 肿瘤防治研究院)人才保障性租赁住房项目高低压配电工程 [2026-09-03] 济南能源新能源重卡充电基础设施建设项目(兴隆山能源中心、莱芜赢牟西大街等充电站新建)监理 [2026-09-01] ... 济南公共资源交易中心 7天前 济南工业母机产业园 分布式光伏 发电投资项目建设工程 EPC 总承包 [2026-09-07] 山东第一医科大学附属肿瘤医院( 山东省 肿瘤防治研究院)人才保障性租赁住房项目高低压配电工程 [2026-09-03] 济南能源新能源重卡充电基础设施建设项目(兴隆山能源中心、莱芜赢牟西大街等充电站新建)监理 [2026-09-...",
+      "category": "market",
+      "category_label": "市场分析",
+      "source": "济南公共资源交易中心",
+      "publish_date": "2026-09-07",
+      "homepage_url": "https://jnggzy.jinan.gov.cn/",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E7%94%B5%E5%8A%9B%E3%80%81%E6%96%B0%E8%83%BD%E6%BA%90%E5%B7%A5%E7%A8%8B",
+      "original_url": "https://jnggzy.jinan.gov.cn/col/col93984/ggzyzbjh/index.html",
+      "collected_at": "2026-09-20T18:25:40+08:00",
+      "relevance_score": 30,
+      "matched_query": "site:jnggzy.jinan.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
+      "time_hint": "publish_date:2026-09-07"
     },
     {
       "id": "e811c40ced1fce62",
@@ -398,22 +414,6 @@
       "time_hint": "publish_date:2026-06-17"
     },
     {
-      "id": "c7c616f7ceb5d19d",
-      "title": "电力、新能源工程",
-      "content": "电力、新能源工程 6天前 济南市章丘区300MW/600MWh工商业储能 项目 监理[2026-06-08] 济南市章丘区300MW/600MWh工商业储能项目工程总承包( EPC) [2026-06-08] 章丘区400MW 分布式光伏 发电项目(一期)50MW监理[2026-06-08] 章丘区400MW分布式光伏发电项目(一期)50MW工程总承包(EPC)[2026-06-08] ... 济南公共资源交易中心 6天前 济南市章丘区300MW/600MWh工商业储能 项目 监理[2026-06-08] 济南市章丘区300MW/600MWh工商业储能项目工程总承包( EPC) [2026-06-08] 章丘区400MW 分布式光伏 发电项目(一期)50MW监理[2026-06-08] 章丘区400MW分布式光...",
-      "category": "project",
-      "category_label": "项目信息",
-      "source": "济南公共资源交易中心",
-      "publish_date": "2026-06-08",
-      "homepage_url": "https://jnggzy.jinan.gov.cn/",
-      "baidu_search_url": "https://www.baidu.com/s?wd=%E7%94%B5%E5%8A%9B%E3%80%81%E6%96%B0%E8%83%BD%E6%BA%90%E5%B7%A5%E7%A8%8B",
-      "original_url": "http://jnggzy.jinan.gov.cn/col/col93984/ggzyzbjh/index.html",
-      "collected_at": "2026-07-06T17:45:36+08:00",
-      "relevance_score": 27,
-      "matched_query": "site:jnggzy.jinan.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
-      "time_hint": "publish_date:2026-06-08"
-    },
-    {
       "id": "54d1dd6378dce04e",
       "title": "全链协同一站智控,综合 能源 擘画新程 | 正泰智慧能源全场景生态亮相SNEC 202...",
       "content": "全链协同一站智控,综合 能源 擘画新程 | 正泰智慧能源全场景生态亮相SNEC 202... 2天前 在综合能源转型背景下,正泰加速从“硬制造”向“软服务+全球化”双向战略升级,搭建“源-网- 荷 - 储 ” 一体化能源 生态,建立综合能源服务领域的领先优势。 从数智化运维到园区能源管理,从 虚拟电厂 聚合到绿电绿证交易,此次展会,正泰安能充分展示出公司在综合服务领域的专业积累。虚拟电厂聚合交易平台集“发电侧交易、售电... 北极星太阳能光伏网  播报  暂停 2天前 在综合能源转型背景下,正泰加速从“硬制造”向“软服务+全球化”双向战略升级,搭建“源-网- 荷 - 储 ” 一体化能源 生态,建立综合能源服务领域的领先优势。 从数智化运维到园区能源管理,从 虚拟电厂 聚合到绿电绿证交易,此次展会,正泰安能充...",
@@ -699,6 +699,22 @@
       "collected_at": "2026-05-21T18:12:41+08:00",
       "relevance_score": 36,
       "matched_query": "site:taggzyjy.com.cn 山东 光伏 分布式光伏 工商业光伏 政策 通知 补贴 并网",
+      "time_hint": "publish_date:2026-04-30"
+    },
+    {
+      "id": "fed56fd90a866dff",
+      "title": "山东 淄博市“十五五”规划纲要:到2030年化石 能源 装机规模达到650万千瓦左右-第...",
+      "content": "山东 淄博市“十五五”规划纲要:到2030年化石 能源 装机规模达到650万千瓦左右-第... 2026年4月30日 实施“老字号”梯次培育工程,支持企业对“老字号”产品、体验和服务进行数智化、年轻化改造,推动老字号增品种、提品质、强品牌,提升“ 山东 手造·齐品淄博”品牌影响力。实施“首店经济”“首发经济”引育工程,依托周村古商城、万象汇、水晶街等商圈和特色街区,大力引进首店首秀首展,支持发展新物种店、概念店、... 北极星太阳能光伏网  播报  暂停 2026年4月30日 实施“老字号”梯次培育工程,支持企业对“老字号”产品、体验和服务进行数智化、年轻化改造,推动老字号增品种、提品质、强品牌,提升“ 山东 手造·齐品淄博”品牌影响力。实施“首店经济”“首发经济”引育工程,依托周村古商城、万象汇、水晶街等...",
+      "category": "market",
+      "category_label": "市场分析",
+      "source": "北极星太阳能光伏网",
+      "publish_date": "2026-04-30",
+      "homepage_url": "https://guangfu.bjx.com.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E5%B1%B1%E4%B8%9C+%E6%B7%84%E5%8D%9A%E5%B8%82%E2%80%9C%E5%8D%81%E4%BA%94%E4%BA%94%E2%80%9D%E8%A7%84%E5%88%92%E7%BA%B2%E8%A6%81%3A%E5%88%B02030%E5%B9%B4%E5%8C%96%E7%9F%B3+%E8%83%BD%E6%BA%90+%E8%A3%85%E6%9C%BA%E8%A7%84%E6%A8%A1%E8%BE%BE%E5%88%B0650%E4%B8%87%E5%8D%83%E7%93%A6%E5%B7%A6%E5%8F%B3-%E7%AC%AC...",
+      "original_url": "https://guangfu.bjx.com.cn/news/20260430/1494053-4.shtml",
+      "collected_at": "2026-09-20T17:21:44+08:00",
+      "relevance_score": 31,
+      "matched_query": "site:guangfu.bjx.com.cn 山东 源网荷储 一体化 储能 新能源 虚拟电厂 需求响应",
       "time_hint": "publish_date:2026-04-30"
     },
     {
