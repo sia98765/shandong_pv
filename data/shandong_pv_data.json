@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-25T20:29:42+08:00",
-  "total": 284,
+  "generated_at": "2026-09-26T06:56:40+08:00",
+  "total": 285,
   "date_rule": {
     "mode": "publish_date_only",
     "years": 2,
-    "cutoff_date": "2024-09-24",
+    "cutoff_date": "2024-09-25",
     "allow_undated_default": false
   },
   "query_scope": {
@@ -55,7 +55,7 @@
     "path_positive_rules_removed": true
   },
   "category_stats": {
-    "market": 42,
+    "market": 43,
     "policy": 58,
     "project": 142,
     "source_grid_load_storage": 42
@@ -80,18 +80,18 @@
     {
       "id": "4e6b25d9eadca0d9",
       "title": "电力、新能源工程",
-      "content": "电力、新能源工程 2026年9月14日 济南工业母机产业园 分布式光伏 发电投资项目建设工程 EPC 总承包 [2026-09-07] 山东第一医科大学附属肿瘤医院( 山东省 肿瘤防治研究院)人才保障性租赁住房项目高低压配电工程 [2026-09-03] 济南能源新能源重卡充电基础设施建设项目(兴隆山能源中心、莱芜赢牟西大街等充电站新建)监理 [2026-09-01] ... 济南公共资源交易中心 2026年9月14日 济南工业母机产业园 分布式光伏 发电投资项目建设工程 EPC 总承包 [2026-09-07] 山东第一医科大学附属肿瘤医院( 山东省 肿瘤防治研究院)人才保障性租赁住房项目高低压配电工程 [2026-09-03] 济南能源新能源重卡充电基础设施建设项目(兴隆山能源中心、莱芜赢牟西大街等充电站新...",
+      "content": "电力、新能源工程 2026年9月18日 济南工业母机产业园 分布式光伏 发电投资项目建设工程 EPC 总承包 [2026-09-07] 山东第一医科大学附属肿瘤医院( 山东省 肿瘤防治研究院)人才保障性租赁住房项目高低压配电工程 [2026-09-03] 济南能源新能源重卡充电基础设施建设项目(兴隆山能源中心、莱芜赢牟西大街等充电站新建)监理 [2026-09-01] ... 济南公共资源交易中心 2026年9月18日 济南工业母机产业园 分布式光伏 发电投资项目建设工程 EPC 总承包 [2026-09-07] 山东第一医科大学附属肿瘤医院( 山东省 肿瘤防治研究院)人才保障性租赁住房项目高低压配电工程 [2026-09-03] 济南能源新能源重卡充电基础设施建设项目(兴隆山能源中心、莱芜赢牟西大街等充电站新...",
       "category": "market",
       "category_label": "市场分析",
       "source": "济南公共资源交易中心",
-      "publish_date": "2026-09-14",
+      "publish_date": "2026-09-18",
       "homepage_url": "https://jnggzy.jinan.gov.cn/",
       "baidu_search_url": "https://www.baidu.com/s?wd=%E7%94%B5%E5%8A%9B%E3%80%81%E6%96%B0%E8%83%BD%E6%BA%90%E5%B7%A5%E7%A8%8B",
       "original_url": "https://jnggzy.jinan.gov.cn/col/col93984/ggzyzbjh/index.html",
-      "collected_at": "2026-09-22T05:35:17+08:00",
+      "collected_at": "2026-09-26T05:11:07+08:00",
       "relevance_score": 30,
       "matched_query": "site:jnggzy.jinan.gov.cn 山东 光伏 分布式光伏 项目 招标 中标 备案 公示 EPC",
-      "time_hint": "publish_date:2026-09-14"
+      "time_hint": "publish_date:2026-09-18"
     },
     {
       "id": "29958049618988d8",
@@ -3820,6 +3820,22 @@
       "relevance_score": 21,
       "matched_query": "site:taggzyjy.com.cn 光伏项目",
       "time_hint": "publish_date:2024-12-26"
+    },
+    {
+      "id": "48db084141d18a58",
+      "title": "电价 “大跳水” 风光项目入市困局!-北极星太阳能 光伏 网",
+      "content": "电价 “大跳水” 风光项目入市困局!-北极星太阳能 光伏 网 2024年12月20日 同样作为分布式 光伏 大省, 山东 刚刚丢出“深水炸弹”,2025年到2026年新增分布式光伏可自主选择全电量或15% 发电量 参与电力 市场 。其中是否囊括自然人户用分布式光伏项目,还须进一步等待该省2025年电力市场交易方案。 此外,广东、陕西也鼓励分布式新能源直接或以聚合虚拟电厂方式参与电力市场交易。 北极星太阳能光伏网  播报  暂停 2024年12月20日 同样作为分布式 光伏 大省, 山东 刚刚丢出“深水炸弹”,2025年到2026年新增分布式光伏可自主选择全电量或15% 发电量 参与电力 市场 。其中是否囊括自然人户用分布式光伏项目,还须进一步等待该省2025年电力市场交易方案。 此外,广东、陕西也鼓励分布式...",
+      "category": "market",
+      "category_label": "市场分析",
+      "source": "北极星太阳能光伏网",
+      "publish_date": "2024-12-20",
+      "homepage_url": "https://guangfu.bjx.com.cn",
+      "baidu_search_url": "https://www.baidu.com/s?wd=%E7%94%B5%E4%BB%B7+%E2%80%9C%E5%A4%A7%E8%B7%B3%E6%B0%B4%E2%80%9D+%E9%A3%8E%E5%85%89%E9%A1%B9%E7%9B%AE%E5%85%A5%E5%B8%82%E5%9B%B0%E5%B1%80%21-%E5%8C%97%E6%9E%81%E6%98%9F%E5%A4%AA%E9%98%B3%E8%83%BD+%E5%85%89%E4%BC%8F+%E7%BD%91",
+      "original_url": "https://guangfu.bjx.com.cn/news/20241220/1418077.shtml",
+      "collected_at": "2026-09-26T04:02:56+08:00",
+      "relevance_score": 34,
+      "matched_query": "site:guangfu.bjx.com.cn 山东 光伏 市场 装机 发电量 电价 消纳 数据 分析",
+      "time_hint": "publish_date:2024-12-20"
     },
     {
       "id": "57a35f3c252f7045",
